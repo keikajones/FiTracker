@@ -1,0 +1,9 @@
+@media (min-width: 768px) {
+  body {
+    background: blue; } }
+@media (min-width: 992px) {
+  body {
+    background: yellow; } }
+@media (min-width: 1200px) {
+  body {
+    background: red; } }

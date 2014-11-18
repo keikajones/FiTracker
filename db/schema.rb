@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117185831) do
+ActiveRecord::Schema.define(version: 20141118184422) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -42,18 +42,8 @@ ActiveRecord::Schema.define(version: 20141117185831) do
 
   add_index "companies", ["user_id"], name: "index_companies_on_user_id"
 
-  create_table "personals", force: true do |t|
-    t.string   "fname"
-    t.string   "lname"
-    t.string   "email"
-    t.string   "location"
-    t.text     "bio"
-    t.string   "activities"
-    t.boolean  "facebook"
-    t.boolean  "twitter"
-    t.boolean  "instagram"
-    t.boolean  "pinterest"
-    t.boolean  "blog"
+  create_table "interests", force: true do |t|
+    t.string   "type"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -86,6 +76,15 @@ ActiveRecord::Schema.define(version: 20141117185831) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "location"
+    t.text     "bio"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "pinterest"
+    t.string   "blog"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
