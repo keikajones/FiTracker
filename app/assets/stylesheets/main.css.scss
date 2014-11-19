@@ -1,9 +1,38 @@
+$font-family: 'Open Sans';
+
+/****************************************************
+GENERAL
+*****************************************************/
+
 body{
-	background: lightblue;
+	font-family: $font-family;
+}
+
+.heading{
+	text-align: center;
+	margin-top: 100px;
+}
+
+/****************************************************
+HOMEPAGE
+*****************************************************/
+
+.home-index{
+	background-image: url('running-silhouette-450-opacity.jpg');
+	background-opacity: 20%;
+	width: 100%;
+	height: 760px;
+	background-repeat: no-repeat;
+}
+
+.notice, .alert{
+	position: absolute;
 }
 
 .signout{
-	float: right;
+	position: absolute;
+	right: 10px;
+	top: 10px;
 	margin-right: 15px;
 }
 
@@ -11,6 +40,17 @@ body{
 	text-align: center;
 	font-size: 4em;
 	margin-top: 100px;
+	font-family: 'Montserrat Subrayada', sans-serif;
+	#fit{
+		font-size: 1.2em;
+	}
+}
+
+#intro-copy{
+	font-family: $font-family;
+	width: 95%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .btns-wrapper{
@@ -20,7 +60,8 @@ body{
 	padding-top: 100px;
 	.btn, .btn-default{
 		display: block;
-		width: 100px;
+		width: 180px;
+		height: 50px;
 		margin: 0 auto 15px;
 	}
 }
@@ -30,7 +71,7 @@ SIGN IN PAGE
 *****************************************************/
 
 .sign-in-form{
-	width: 200px;
+	width: 80%;
 	margin: 0 auto;
 	.field{
 		margin-bottom: 10px;
@@ -49,8 +90,69 @@ SIGN UP PAGE
 	@extend .sign-in-form;
 }
 
+.signup-view1{
+	width: 325px;
+	margin: 50px auto 0;
+}
+
+.signup-view2{
+	@extend .signup-view1;
+	display: none;
+	#user_bio{
+		height: 100px;
+	}
+}
+
+.continueBtn{
+	margin-left: 240px;
+}
 
 
+/****************************************************
+SIGN UP PAGE
+*****************************************************/
+
+#interests-copy{
+	width: 95%;
+	margin: 80px auto 0;
+	line-height: 1.25;
+}
+.interests-list{
+	list-style: none;
+	padding-left: 0;
+	width: 95%;
+	margin: 30px 0 auto;
+	text-align: center;
+	#interest_names_{
+		margin: 5px 10px 0 0;
+		height: 20px;
+		padding: 0;
+	}
+	li {
+		display: inline-block;
+		margin-left: 20px;
+		margin-bottom: 20px;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		padding: 0 10px 5px;
+		// background-color: lightblue;
+	}
+}
+
+/****************************************************
+USER PUBLIC PROFILE
+*****************************************************/
+
+.profile-bio{
+	margin-top: 80px;
+}
+.user_name{
+	margin-top: 0;
+}
+
+.user-bio{
+	padding-left: 0;
+}
 
 
 

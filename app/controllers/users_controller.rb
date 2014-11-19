@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	
+  	@interest = Interest.find_by_name(params[:interest])
   end
 
   def edit

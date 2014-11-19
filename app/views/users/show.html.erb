@@ -1,1 +1,11 @@
-<h1><%= current_user.email %></h1>
+<div class="container-fluid">
+	<div class="row profile-bio">
+		<div class="col-xs-5"><%= image_tag current_user.avatar.url(:thumb) %></div>
+		<div class="col-xs-7 user-bio"><h1 class="user_name"><%= current_user.fname + " " + current_user.lname %></h1>
+		<p><%= current_user.bio %></p>
+		<p><%= current_user.location %></p>
+		</div>
+	</div>
+
+	
+</div>

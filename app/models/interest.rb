@@ -1,3 +1,5 @@
 class Interest < ActiveRecord::Base
-	belongs_to :user
+	has_many :interest_users
+
+	validates_presence_of :name
 end
