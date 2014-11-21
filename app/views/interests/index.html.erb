@@ -1,14 +1,17 @@
-<h4 id="interests-copy">Thanks for signing up! <br>Now let's build up your profile, please select what you're interested in below!</h4>
+<div class="container-fluid interests-wrapper">	
+	<p id="interests-copy">Thanks for signing up! <br>Now let's build up your profile, please select what you're interested in below!</p>
 
-<%= form_tag(user_path(current_user), method: :get) do %>
-	<ul class="interests-list">
-	  <% @interests.each do |interest| %>
-	      <li>
-	        <%= check_box_tag :interest, interest.name %>
-	        <%= interest.name %>
-	      </li>
-	  <% end %>
-	</ul>
-	<%= submit_tag "Save", class: "btn btn-default" %>
-<% end %>
-
+	<div class="row interests-form">
+		<%= form_tag(users_interests_path, method: :post) do %>
+			<ul class="interests-list">
+			  <% @interests.each do |interest| %>
+			      <li>
+			        <%= check_box_tag 'interests[]', interest.id %>
+			        <%= interest.name %>
+			      </li>
+			  <% end %>
+			</ul>
+			<%= submit_tag "Save", class: "btn btn-default interestsBtn" %>
+		<% end %>
+	</div>
+</div>

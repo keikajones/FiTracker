@@ -1,9 +1,9 @@
 @media (min-width: 768px) {
   body {
-    background: blue; } }
+    background: grey; } }
 @media (min-width: 992px) {
   body {
-    background: yellow; } }
+    background: #fff; } }
 @media (min-width: 1200px) {
   body {
-    background: red; } }
+    background: grey; } }

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  post 'users/interests', to: 'users#interests'
   resources :users do
     member do
       post 'follow'

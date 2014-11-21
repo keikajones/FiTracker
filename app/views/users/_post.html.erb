@@ -1,0 +1,8 @@
+<li class="user_post_body"><%= post.body %></li>
+<li class="edit_user_post">
+	<% if current_user and @user == current_user %>
+		<%= link_to 'Edit Post', edit_post_path(post) %> |
+		<%= link_to 'Delete', post_path, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %>
+	<% end %>
+</li>
+<hr class="post_divider_hr"/>

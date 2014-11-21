@@ -48,10 +48,12 @@
         <%= f.submit "Next", class: "btn btn-default signinBtn" %>
       </div><br>
     </div>
+    <br>
+    <%- if controller_name != 'sessions' %>
+      <p><%= link_to "Sign In", new_session_path(resource_name), id: "signin-link" %></p>
+    <% end -%>
 
   <% end %>
-
-  <%= render "devise/shared/links" %>
 
 </div>
 
