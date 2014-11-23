@@ -6,4 +6,8 @@ class HomeController < ApplicationController
 		end
 	end
 
+	def explore
+		
+	end
+
 end

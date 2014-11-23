@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118204232) do
+ActiveRecord::Schema.define(version: 20141121184632) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -24,15 +24,15 @@ ActiveRecord::Schema.define(version: 20141118204232) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "interest_users", force: true do |t|
+  create_table "goals", force: true do |t|
+    t.string   "body"
+    t.string   "timeline"
     t.integer  "user_id"
-    t.integer  "interest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "interest_users", ["interest_id"], name: "index_interest_users_on_interest_id"
-  add_index "interest_users", ["user_id"], name: "index_interest_users_on_user_id"
+  add_index "goals", ["user_id"], name: "index_goals_on_user_id"
 
   create_table "interests", force: true do |t|
     t.string   "name"
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20141118204232) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "user_interests", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "interest_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_interests", ["interest_id"], name: "index_user_interests_on_interest_id"
+  add_index "user_interests", ["user_id"], name: "index_user_interests_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,11 +1,29 @@
-<div class="container-fluid user_public_profile">
-	<div class="row profile-bio">
-		<div class="profile-pic"><%= image_tag current_user.avatar.url(:thumb), id: "profile-image" %></div>
-		<div class="user-bio"><h1 class="user_name"><%= current_user.fname + " " + current_user.lname %></h1>
+<div class="user_wrapper">
+	<nav class="explore-nav">
+		<ul>
+			<li><%= link_to 'Explore', explore_path %></li>
+		</ul>
+	</nav>
+	<div class="bio-wrapper">
+		<div class="row profile-bio">
+			<div class="profile-pic"><%= image_tag current_user.avatar.url(:thumb), class: "profile-image" %></div>
+			<div class="user-info">	
+				<h1 class="user_name"><%= current_user.fname + " " + current_user.lname %></h1>
+				<p class="location"><%= current_user.location %></p>
+			</div>
+		</div>
+		<div class="row user-bio">
 			<p><%= current_user.bio %></p>
-			<p><%= current_user.location %></p>
 		</div>
 	</div>
+
+	<nav class="user-nav">
+		<ul>
+			<li>Personal Tracker</li>
+			<li>Goals</li>
+			<li>Post's Feed</li>
+		</ul>
+	</nav>
 	
 	<div class="row user_posts">
 		<%= form_for @post, remote: true do |f| %>
@@ -20,9 +38,41 @@
 		</ul>
 	</div>
 
-<!-- 	<h3>Interests</h3>
- -->	<%# current_user.interests.each do |interest| %>
-		<%#= interest.name %>
-	<%# end %>
+	<div class="row">
+		<ul class="user-interests">
+			<% current_user.interests.each do |interest| %>
+				<li><%= interest.name %></li>
+			<% end %>
+		</ul>
+	</div>
+
+	<div class="row">
+		<ul class="user-goals-list">
+			<% current_user.goals.each do |goal| %>
+				<%= goal.body %><br>
+				<%= goal.timeline %>
+			<% end %>
+		</ul>
+	</div>
 	
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

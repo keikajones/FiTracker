@@ -1,1 +1,21 @@
-<%= @interest %>
+<div class="interests-bkimg">
+	<div class="interests-copy-wrapper">
+		<p class="interests-copy">Now let's build up your profile, <br>please select what you're interested in below!</p>
+	</div>
+</div>
+<div class="container-fluid interests-wrapper">	
+
+	<div class="row interests-form">
+		<%= form_tag(users_interests_path, method: :post) do %>
+			<ul class="interests-list">
+			  <% @interests.each do |interest| %>
+			      <li>
+			        <%= check_box_tag 'interests[]', interest.id %>
+			        <%= interest.name %>
+			      </li>
+			  <% end %>
+			</ul>
+			<%= submit_tag "Save", class: "btn btn-default interestsBtn" %>
+		<% end %>
+	</div>
+</div>

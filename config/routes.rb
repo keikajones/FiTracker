@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   post 'users/interests', to: 'users#interests'
+  post 'users/goals', to: 'users#goals'
+
   resources :users do
     member do
       post 'follow'
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :interests
+  resources :goals
   
   resources :posts do
     resources :comments
@@ -21,6 +24,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  get 'explore' => 'home#explore'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

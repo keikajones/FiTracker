@@ -1,5 +1,7 @@
-<div class="container-fluid sign-up-form">  
-  <h2 class="heading">Create an Account</h2>
+<div class="sign-up-bkimg">
+  <h2 class="heading signup-heading">Let's Get Started!</h2>
+</div>
+<div class="container-fluid sign-up-form"> 
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
@@ -29,6 +31,10 @@
       </div>
 
       <span class="btn btn-default continueBtn">Continue</span>
+      <br>
+      <%- if controller_name != 'sessions' %>
+        <p><%= link_to "Sign In", new_session_path(resource_name), id: "signin-link" %></p>
+      <% end -%>
     </div>
     
     <div class="signup-view2">
@@ -47,11 +53,12 @@
       <div class="actions">
         <%= f.submit "Next", class: "btn btn-default signinBtn" %>
       </div><br>
+
+      <br>
+      <%- if controller_name != 'sessions' %>
+        <p><%= link_to "Sign In", new_session_path(resource_name), id: "signin-link" %></p>
+      <% end -%>
     </div>
-    <br>
-    <%- if controller_name != 'sessions' %>
-      <p><%= link_to "Sign In", new_session_path(resource_name), id: "signin-link" %></p>
-    <% end -%>
 
   <% end %>
 

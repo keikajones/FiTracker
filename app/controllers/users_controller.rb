@@ -51,8 +51,18 @@ class UsersController < ApplicationController
 
   def interests
       #get the interests
-      #loop through and create a new user_interest for each 
-      redirect_to current_user
+      @interests = Interest.find(params[:interests])
+      #loop through and create a new user_interest for each
+      @interests.each do |interest|
+        UserInterest.create(user_id: current_user.id, interest_id: interest.id)
+      end
+
+      redirect_to new_goal_path
+  end
+
+  def goals
+    #get the goals
+    redirect_to current_user
   end
 
   private

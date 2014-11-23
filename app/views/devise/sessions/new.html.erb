@@ -1,5 +1,7 @@
+<div class="sign-in-bkimg">
+  <h1 class="signin-title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
+</div>
 <div class="container-fluid sign-in-form"> 
-  <h1 class="signin-title"><span id="fit">FIT</span>racker</h1>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "form-control" %>
@@ -8,18 +10,14 @@
     <div class="field">
       <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "form-control" %>
     </div>
+    
+    <div class="signinBtn-links">
+      <div class="actions">
+        <%= f.submit "Sign In", class: "btn btn-default signinBtn" %>
+      </div><br>
 
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end -%>
-
-    <div class="actions">
-      <%= f.submit "Sign In", class: "btn btn-default signinBtn" %>
-    </div><br>
+      <%= render "devise/shared/links" %>
+    </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
 </div>
