@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		@posts = Post.order('created_at ASC')
+		@posts = Post.order('created_at DESC')
 		if @post.save
 			flash[:notice] = "New post!"
 			respond_to do |format|

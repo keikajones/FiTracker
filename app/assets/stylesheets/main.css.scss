@@ -1,5 +1,10 @@
 $font-family: 'Open Sans';
-$primary-color: #545252;
+$primary-color: #3D4754;
+$primary-background-color: #8ACDCE;
+$secondary-background-color: #3D4754;
+$tertiary-background-color: #FF5F47;
+$quaternary-background-color: #98797E;
+$quinary-background-color: #F5F6F5;
 
 	/****************************************************
 	GENERAL
@@ -7,6 +12,8 @@ $primary-color: #545252;
 
 	body{
 		font-family: $font-family;
+		margin: 0;
+		padding: 0;
 	}
 
 	.heading{
@@ -23,15 +30,52 @@ $primary-color: #545252;
 		text-decoration: none;
 	}	
 
-	.main-nav{
+	.menu-bars{
 		position: absolute;
+		right: 5px;
+		top: 5px;
+	}
+
+	.explore-nav{
+		width: 100%;
 		ul{
 			list-style: none;
-			padding: 10px 0 0 10px;
+			text-align: left;
+			padding: 10px 10px;
+			margin: 0;
 			li{
-				display: inline-block;
+				margin-bottom: 10px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #aaa;
+				font-size: 1.5em;
+				a{
+					color: $quinary-background-color;
+				}
+				.menu-icon{
+					color: $quinary-background-color;
+					margin-right: 15px;
+					font-size: 1.5em;
+				}
+				.profile-icon{
+					margin-left: 4px;
+					margin-right: 17px;
+				}
+				.logout-icon{
+					margin-left: 6px;
+					margin-right: 10px;
+				}
 			}
 		}
+	}
+
+	%buttons{
+		height: 30px;
+		width: 100%;
+		max-width: 400px;
+		padding-top: 4px;
+		background-color: $tertiary-background-color;
+		border: none;
+		color: #fff;
 	}
 
 	/****************************************************
@@ -50,13 +94,6 @@ $primary-color: #545252;
 
 	.notice, .alert{
 		position: absolute;
-	}
-
-	.signout{
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		margin-right: 15px;
 	}
 
 	.title{
@@ -87,6 +124,7 @@ $primary-color: #545252;
 			width: 180px;
 			height: 50px;
 			margin: 0 auto 15px;
+			background-color: $quinary-background-color;
 		}
 	}
 
@@ -124,12 +162,7 @@ $primary-color: #545252;
 			margin: 0 auto;
 			.actions{
 				.signinBtn{
-					height: 30px;
-					width: 100%;
-					max-width: 400px;
-					padding-top: 3px;
-					background-color: #7F7C7D;
-					color: #fff;
+					@extend %buttons;
 				}
 			}
 		}
@@ -165,7 +198,7 @@ $primary-color: #545252;
 			width: 100%;
 			margin: 40px auto 0;
 			.continueBtn{
-				@extend .signinBtn;
+				@extend %buttons;
 				margin: 10px 0;
 			}
 		}
@@ -183,7 +216,6 @@ $primary-color: #545252;
 		margin: 0 auto;
 	}
 
-	
 
 
 	/****************************************************
@@ -249,9 +281,7 @@ $primary-color: #545252;
 				}
 			}
 			.interestsBtn{
-				background-color: #7F7C7D;
-				color: #fff;
-				width: 100%;
+				@extend %buttons;
 			}
 		}
 	} //.interests-wrapper //
@@ -274,9 +304,7 @@ $primary-color: #545252;
 
 			}
 			.goalsBtn{
-				background-color: #7F7C7D;
-				color: #fff;
-				width: 100%;
+				@extend %buttons;
 			}
 		}
 	}
@@ -290,13 +318,13 @@ $primary-color: #545252;
 		padding: 0;
 		.bio-wrapper{
 			width: 100%;
-			background-color: #80E593;
+			background-color: $primary-background-color;
 			margin: 0;
 			padding: 0;
 			.profile-bio{
 				width: 90%;
 				margin: 0 auto;
-				padding: 50px 0 10px;
+				padding: 30px 0 10px;
 				.profile-pic{
 					.profile-image{
 						float: left;
@@ -321,13 +349,14 @@ $primary-color: #545252;
 			.user-bio{
 				width: 90%;
 				margin: 0 auto;
+				padding-bottom: 10px;
 				font-size: 0.95em;
 			}
 		}
 		.user-nav{
 			width: 100%;
 			margin: 0 auto;
-			background-color: #BFFFC3;
+			background-color: $quinary-background-color;
 			padding: 5px 0;
 			ul{
 				list-style: none;
@@ -336,30 +365,52 @@ $primary-color: #545252;
 				margin: 0 auto;
 				li{
 					display: inline-block;
-					margin: 0 30px;
+					margin: 0 35px;
 					text-align: center;
 				}
 			}
 		}
-		.user_posts{
-			width: 90%;
-			margin: 20px auto;
-			.post_body{
-				width: 100%;
-				height: 60px;
-				margin: 0 auto;
-				padding: 3px;
-			}
-			.postBtn{
-				position: relative;
-				margin-top: 5px;
-				width: 70px;
-				height: 25px;
-				padding-top: 3px;
+		.user-posts-section{
+			.user_posts{
+				width: 90%;
+				margin: 20px auto;
+				.post_body{
+					width: 100%;
+					height: 60px;
+					margin: 0 auto;
+					padding: 3px;
+				}
+				.postBtn{
+					position: relative;
+					margin-top: 5px;
+					width: 70px;
+					height: 25px;
+					padding-top: 3px;
+				}
 			}
 		}
 	}
 
+	/****************************************************
+	USER PUBLIC PROFILE - INTERESTS
+	*****************************************************/
+	
+	.edit-interests-link{
+		float: right;
+		margin-right: 20px;
+		margin-top: 10px;
+	}
+
+	.user-interests{
+		ul{
+			list-style: none;
+			margin-top: 10px;
+			padding-left: 30px;
+			li{
+				margin-bottom: 10px;
+			}
+		}
+	}
 	
 
 

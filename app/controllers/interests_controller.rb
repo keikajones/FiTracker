@@ -11,4 +11,9 @@ class InterestsController < ApplicationController
 			
 	end
 
+	def edit
+		@user = User.find(params[:id])
+		@interests = Interest.all
+	end
+
 end

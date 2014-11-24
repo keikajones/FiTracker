@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
 	belongs_to :user
 
-	validates_presence_of :body, :timeline
+	validates_presence_of :body
 end

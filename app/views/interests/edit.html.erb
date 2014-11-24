@@ -21,40 +21,26 @@
 
 	<nav class="user-nav">
 		<ul>
-			<li class="active" id="nav-posts"><%= link_to "Post's Feed", @user %></li>
-			<li id="nav-interests"><%= link_to "Interests", user_interests_user_path(@user) %></li>
+			<li id="nav-posts"><%= link_to "Post's Feed", @user %></li>
+			<li class="active" id="nav-interests"><%= link_to "Interests", user_interests_user_path(@user) %></li>
 			<li id="nav-goals"><%= link_to "Goals", user_goals_user_path(@user) %></li>
 		</ul>
 	</nav>
 	
-	<div class="user-posts-section">
-		<div class="row user_posts">
-			<%= render 'post_form' %>
-		</div>
-
-		<div class="row">
-			<ul class="user_posts_list">
-				<%= render partial: 'post', collection: current_user.posts %>
-			</ul>
+	<div class="interests-wrapper">
+		<div class="row interests-form">
+			<%= form_tag(users_interests_path, method: :post) do %>
+				<ul class="interests-list">
+				  <% @interests.each do |interest| %>
+				      <li>
+				        <%= check_box_tag 'interests[]', interest.id %>
+				        <%= interest.name %>
+				      </li>
+				  <% end %>
+				</ul>
+				<%= submit_tag "Save Changes", class: "btn btn-default interestsBtn" %>
+			<% end %>
 		</div>
 	</div>
 	
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
