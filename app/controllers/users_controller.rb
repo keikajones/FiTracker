@@ -26,6 +26,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @posts = Post.all
+    @posts = Post.order('created_at ASC')
   end
 
   def show

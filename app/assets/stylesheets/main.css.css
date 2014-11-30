@@ -10,12 +10,20 @@ body {
   text-align: center;
   font-size: 1.8em; }
 
+.header {
+  font-family: "Raleway";
+  margin: 10px 0; }
+
 a {
   text-decoration: none;
   color: #3d4754; }
 
 a:hover {
   text-decoration: none; }
+
+hr {
+  color: #000;
+  height: 2px; }
 
 .menu-bars {
   position: absolute;
@@ -57,7 +65,7 @@ a:hover {
   color: #fff; }
 
 /****************************************************
-HOMEPAGE
+PAGE - ROOT
 *****************************************************/
 .home-index {
   background: url("running-silhouette-lg-opacity4.jpg") no-repeat top;
@@ -99,7 +107,7 @@ HOMEPAGE
     background-color: #f5f6f5; }
 
 /****************************************************
-SIGN IN PAGE
+PAGE - SIGN IN
 *****************************************************/
 .sign-in-bkimg {
   background: url("cycling.jpg") no-repeat top center fixed;
@@ -126,7 +134,7 @@ SIGN IN PAGE
     margin: 0 auto; }
 
 /****************************************************
-SIGN UP PAGE
+PAGE - SIGN UP
 *****************************************************/
 .sign-up-bkimg {
   background: url("fitness-kicking.jpg") no-repeat center center fixed;
@@ -141,7 +149,7 @@ SIGN UP PAGE
     padding-top: 300px;
     padding-left: 15px;
     color: #fff;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     font-size: 2.5em;
     text-align: left; }
 
@@ -162,7 +170,7 @@ SIGN UP PAGE
   margin: 0 auto; }
 
 /****************************************************
-INTERESTS PAGE
+PAGE - INTERESTS FORM
 *****************************************************/
 .interests-bkimg {
   background: url("starting-blocks.jpg") no-repeat;
@@ -181,7 +189,7 @@ INTERESTS PAGE
     .interests-bkimg .interests-copy-wrapper .interests-copy {
       padding: 3px 15px;
       color: #3d4754;
-      font-family: 'Raleway';
+      font-family: "Raleway";
       font-size: 1.5em;
       text-align: left; }
 
@@ -217,7 +225,7 @@ INTERESTS PAGE
         clear: left; }
 
 /****************************************************
-GOAL PAGE
+PAGE - GOALS
 *****************************************************/
 .goal-wrapper {
   width: 100%;
@@ -230,8 +238,14 @@ GOAL PAGE
       margin-bottom: 15px; }
 
 /****************************************************
-USER PUBLIC PROFILE
+PAGE - USER PUBLIC PROFILE
 *****************************************************/
+.user-profile-title {
+  font-size: 2em;
+  padding-top: 5px;
+  margin: 0 auto;
+  background-color: #8acdce; }
+
 .user_wrapper {
   width: 100%;
   margin: 0 auto;
@@ -283,25 +297,232 @@ USER PUBLIC PROFILE
       width: 100%;
       height: 60px;
       margin: 0 auto;
-      padding: 3px; }
+      padding: 3px;
+      border-radius: 5px 5px 0 0; }
+    .user_wrapper .user-posts-section .user_posts .post_tag {
+      width: 100%;
+      height: 25px;
+      font-size: 0.8em;
+      padding: 3px;
+      margin-bottom: 5px;
+      border-radius: 0 0 5px 5px;
+      border-top: none; }
+    .user_wrapper .user-posts-section .user_posts .add-image-btn, .user_wrapper .user-posts-section .user_posts .add-video-btn {
+      height: 20px;
+      font-size: 0.8em;
+      padding: 2px 4px;
+      display: inline-block;
+      margin-bottom: 10px; }
+    .user_wrapper .user-posts-section .user_posts .choose-file-btn {
+      display: none; }
+      .user_wrapper .user-posts-section .user_posts .choose-file-btn .post-avatar {
+        display: inline-block;
+        margin-top: 4px; }
+    .user_wrapper .user-posts-section .user_posts .choose-vid-file {
+      display: none; }
+      .user_wrapper .user-posts-section .user_posts .choose-vid-file .embed-video {
+        display: block;
+        font-size: 0.8em;
+        margin-top: 5px;
+        width: 300px;
+        height: 20px;
+        border-radius: 3px;
+        border: 1px solid #bbb; }
     .user_wrapper .user-posts-section .user_posts .postBtn {
-      position: relative;
-      margin-top: 5px;
+      display: block;
+      margin-top: 10px;
       width: 70px;
       height: 25px;
       padding-top: 3px; }
+  .user_wrapper .user-posts-section .user_posts_list {
+    list-style: none;
+    width: 90%; }
+    .user_wrapper .user-posts-section .user_posts_list .post-user-avatar {
+      display: inline-block;
+      max-width: 50px;
+      max-height: 50px; }
+    .user_wrapper .user-posts-section .user_posts_list .post-info {
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 0.8em; }
+      .user_wrapper .user-posts-section .user_posts_list .post-info .post-author {
+        margin: 0; }
+      .user_wrapper .user-posts-section .user_posts_list .post-info .post-created {
+        margin: 0; }
+    .user_wrapper .user-posts-section .user_posts_list .user_post_body {
+      margin: 10px 0; }
+    .user_wrapper .user-posts-section .user_posts_list .user_post_tag {
+      margin: 10px 0; }
+    .user_wrapper .user-posts-section .user_posts_list .user_post_image .post-image {
+      width: 100%; }
+    .user_wrapper .user-posts-section .user_posts_list .edit_user_post {
+      text-align: right;
+      margin-top: 10px; }
 
 /****************************************************
-USER PUBLIC PROFILE - INTERESTS
+PAGE - EDIT USER POSTS 
 *****************************************************/
-.edit-interests-link {
-  float: right;
-  margin-right: 20px;
-  margin-top: 10px; }
+.edit_user_posts {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px; }
+  .edit_user_posts .post_body {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 5px 5px 0 0; }
+  .edit_user_posts .post_tag {
+    width: 100%;
+    height: 25px;
+    font-size: 0.8em;
+    padding: 3px;
+    margin-bottom: 5px;
+    border-radius: 0 0 5px 5px;
+    border-top: none; }
+  .edit_user_posts .add-image-btn, .edit_user_posts .user_wrapper .user-posts-section .user_posts .add-video-btn, .user_wrapper .user-posts-section .user_posts .edit_user_posts .add-video-btn, .edit_user_posts .add-video-btn {
+    height: 20px;
+    font-size: 0.8em;
+    padding: 2px 4px;
+    display: inline-block; }
+  .edit_user_posts .choose-file-btn {
+    display: none; }
+    .edit_user_posts .choose-file-btn .post-avatar {
+      display: inline-block;
+      margin-top: 4px; }
+  .edit_user_posts .choose-vid-file {
+    display: none; }
+    .edit_user_posts .choose-vid-file .embed-video {
+      display: block;
+      font-size: 0.8em;
+      margin-top: 5px;
+      width: 300px;
+      height: 20px;
+      border-radius: 3px;
+      border: 1px solid #bbb; }
+  .edit_user_posts .postBtn {
+    display: block;
+    margin-top: 10px;
+    width: 70px;
+    height: 25px;
+    padding-top: 3px; }
 
-.user-interests ul {
+/****************************************************
+PAGE - HOME
+*****************************************************/
+.user-show-title {
+  font-size: 2em;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  margin: 0;
+  background-color: #8acdce; }
+
+.user-index-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #8acdce; }
+  .user-index-wrapper .user-feed {
+    width: 95%;
+    max-width: 530px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px; }
+    .user-index-wrapper .user-feed .post-user-avatar {
+      display: inline-block;
+      max-width: 50px;
+      max-height: 50px; }
+    .user-index-wrapper .user-feed .post-info {
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 0.8em; }
+      .user-index-wrapper .user-feed .post-info .post-author {
+        margin: 0; }
+      .user-index-wrapper .user-feed .post-info .post-created {
+        margin: 0; }
+    .user-index-wrapper .user-feed .user_post_body {
+      margin-top: 10px; }
+    .user-index-wrapper .user-feed .user_post_tag {
+      margin-bottom: 10px; }
+    .user-index-wrapper .user-feed .post-image {
+      width: 100%; }
+
+/****************************************************
+PAGE - EXPLORE (INTERESTS)
+*****************************************************/
+.explore-container {
+  background-color: #8acdce;
+  height: 800px; }
+
+.explore-title {
+  font-size: 2em;
+  padding-top: 5px;
+  margin: 0; }
+
+.user-interests {
+  width: 95%;
+  margin: 40px auto 0; }
+  .user-interests .user-interests-list {
+    list-style: none;
+    padding-left: 0; }
+    .user-interests .user-interests-list li {
+      text-align: center;
+      margin-bottom: 20px; }
+
+#accordian {
+  background: #8acdce;
+  width: 100%;
+  color: #f5f6f5;
+  /*Some cool shadow and glow effect*/ }
+
+/*heading styles*/
+#accordian h3 {
+  line-height: 50px;
+  padding: 0 10px;
+  margin: -20px 0;
+  cursor: pointer;
+  /*fallback for browsers not supporting gradients*/
+  background: linear-gradient(#003040, #002535); }
+
+#accordian ul {
+  padding: 0; }
+
+/*heading hover effect*/
+#accordian h3:hover {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.7); }
+
+/*list items*/
+#accordian li {
+  list-style-type: none; }
+
+/*links*/
+#accordian ul ul li {
+  color: #3d4754;
+  text-decoration: none;
+  font-size: 1em;
+  line-height: auto;
+  display: block;
+  padding: 40px 0;
+  margin: 20px 0;
+  /*transition for smooth hover animation*/
+  transition: all 0.15s;
+  background-color: #fff; }
+
+/*Lets hide the non active LIs by default*/
+#accordian ul ul {
+  display: none; }
+
+#accordian li.active ul {
+  display: block; }
+
+.interest-post-feed {
   list-style: none;
-  margin-top: 10px;
-  padding-left: 30px; }
-  .user-interests ul li {
-    margin-bottom: 10px; }
+  padding-left: 0; }
+  .interest-post-feed .post-user-avatar {
+    max-height: 100px;
+    max-width: 100px;
+    display: inline-block; }
+  .interest-post-feed .post-info {
+    display: inline-block; }
+    .interest-post-feed .post-info .post-author {
+      margin-left: -50px; }

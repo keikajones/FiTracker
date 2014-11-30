@@ -33,7 +33,7 @@
 				<ul class="interests-list">
 				  <% @interests.each do |interest| %>
 				      <li>
-				        <%= check_box_tag 'interests[]', interest.id %>
+				        <%= check_box_tag 'interests[]', interest.id, current_user.interests.include  %>
 				        <%= interest.name %>
 				      </li>
 				  <% end %>

@@ -1,17 +1,129 @@
-@media (min-width: 768px) { 
-	body{
-		background: lightgrey;
+$font-family: 'Open Sans';
+$secondary-font-family: 'Raleway';
+$primary-color: #3D4754;
+$primary-background-color: #8ACDCE;
+$secondary-background-color: #3D4754;
+$tertiary-background-color: #FF5F47;
+$quaternary-background-color: #98797E;
+$quinary-background-color: #F5F6F5;
+
+@media (max-width: 767px) {
+
+	/****************************************************
+	PAGE - HOME
+	*****************************************************/
+
+	.user-index-wrapper{
+		.following-side-menu{
+			display: none;
+		}
 	}
+
+} // @media xsmall //
+
+@media (min-width: 768px) {
+
+	/****************************************************
+	PAGE - HOME
+	*****************************************************/
+	
+	body{
+		background-color: $primary-background-color;
+	}
+
+	.user-index-wrapper{
+		width: 95%;
+		margin: 0 auto;
+		.following-side-menu{
+			margin: 0 2%;
+			float: left;
+			width: 26%;
+			max-width: 225px;
+			background-color: #fff;
+			border-radius: 5px;
+			.follow{
+				padding: 0 10px;
+				ul{
+					list-style: none;
+					padding-left: 10px;
+					li{
+						display: inline-block;
+						margin: 5px;
+						.follow-avatar{
+							max-width: 30px;
+							max-height: 30px;
+						}
+					}
+				}
+			}
+			.follow-hr{
+				width: 95%;
+			}
+		}
+		.user-feed{
+			float: left;
+			width: 68%;
+			max-width: 600px;
+			margin-right: 2%;
+		}
+	}
+
 } // @media small //
 
 @media (min-width: 992px) {
-	body{
-		background: #fff;
+
+	/****************************************************
+	PAGE - HOME
+	*****************************************************/
+
+	.user-index-wrapper{
+		.user-feed{
+		}
 	}
+
 }
 
 @media (min-width: 1200px) {
-	body{
-		background: lightgrey;
+	
+	/****************************************************
+	PAGE - HOME
+	*****************************************************/
+	
+	.user-index-wrapper{
+		.user-feed{
+		}
 	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

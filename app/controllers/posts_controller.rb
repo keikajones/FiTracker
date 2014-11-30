@@ -13,15 +13,13 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		@posts = Post.order('created_at DESC')
+		@posts = Post.order('created_at ASC')
 		if @post.save
 			flash[:notice] = "New post!"
-			respond_to do |format|
-				format.js
-			end
+			redirect_to current_user
 		else
 			flash[:notice] = "Something went wrong."
-			render :new
+			redirect_to current_user
 		end
 	end
 
@@ -31,7 +29,7 @@ class PostsController < ApplicationController
 	def update
 		if @post.update(post_params)
 			flash[:notice] = "Post updated!"
-			redirect_to @post
+			redirect_to current_user
 		else
 			flash[:alert] = "Something went wrong."
 			render :edit
@@ -47,7 +45,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:body).merge(user_id: current_user.id)
+		params.require(:post).permit(:body, :image, :video, :tag).merge(user_id: current_user.id)
 	end
 
 	def set_post

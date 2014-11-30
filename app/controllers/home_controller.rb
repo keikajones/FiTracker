@@ -7,7 +7,8 @@ class HomeController < ApplicationController
 	end
 
 	def explore
-		
+		@users = User.all
+		@posts = Post.all
 	end
 
 end

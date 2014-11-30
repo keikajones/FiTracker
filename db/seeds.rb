@@ -18,3 +18,6 @@ interest9 = Interest.create(name: "Boxing")
 interest10 = Interest.create(name: "Hiking")
 interest11 = Interest.create(name: "Cycling")
 interest12 = Interest.create(name: "Extreme Sports")
+
+# user1 = User.create(fname: "Keika", lname: "Jones", email: "keika.jones@gmail.com", password: "akiek7852", password_confirmation: "akiek7852", location: "New York, NY", bio: "Aspiring web developer, foodie, dog lover, and living life to its fullest.", avatar_file_name: "hiking_with_blue.jpg")
+# user2 = User.create(fname: "Aimee", lname: "Huang", email: "aimee.huang@gmail.com", password: "flawless23", password_confirmation: "flawless23", location: "New York, NY", bio: "Sagittarius. 24. ENFP. Fitness. Fashion. Beauty. Food. Social Media. NYC. 'Fearlessly Be Yourself.' Twitter: @Aimeehx3 #yogawithaimee #trainwithaimee http://readysethappy.com", avatar_file_name: "aimeehuang.jpg")

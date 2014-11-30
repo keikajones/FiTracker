@@ -1,9 +1,49 @@
+@media (max-width: 767px) {
+  /****************************************************
+  PAGE - HOME
+  *****************************************************/
+  .user-index-wrapper .following-side-menu {
+    display: none; } }
 @media (min-width: 768px) {
+  /****************************************************
+  PAGE - HOME
+  *****************************************************/
   body {
-    background: lightgrey; } }
+    background-color: #8acdce; }
+
+  .user-index-wrapper {
+    width: 95%;
+    margin: 0 auto; }
+    .user-index-wrapper .following-side-menu {
+      margin: 0 2%;
+      float: left;
+      width: 26%;
+      max-width: 225px;
+      background-color: #fff;
+      border-radius: 5px; }
+      .user-index-wrapper .following-side-menu .follow {
+        padding: 0 10px; }
+        .user-index-wrapper .following-side-menu .follow ul {
+          list-style: none;
+          padding-left: 10px; }
+          .user-index-wrapper .following-side-menu .follow ul li {
+            display: inline-block;
+            margin: 5px; }
+            .user-index-wrapper .following-side-menu .follow ul li .follow-avatar {
+              max-width: 30px;
+              max-height: 30px; }
+      .user-index-wrapper .following-side-menu .follow-hr {
+        width: 95%; }
+    .user-index-wrapper .user-feed {
+      float: left;
+      width: 68%;
+      max-width: 600px;
+      margin-right: 2%; } }
 @media (min-width: 992px) {
-  body {
-    background: #fff; } }
+  /****************************************************
+  PAGE - HOME
+  *****************************************************/ }
 @media (min-width: 1200px) {
-  body {
-    background: lightgrey; } }
+  /****************************************************
+  PAGE - HOME
+  *****************************************************/ }

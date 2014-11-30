@@ -28,8 +28,10 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem "paperclip", "~> 4.2"
+gem "auto_html"
 
 gem 'quiet_assets',		group: :development
+gem 'rb-fsevent', '~> 0.9'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,0 +1,26 @@
+<div class="row edit_user_posts">
+	<h1 class="header edit-post-header">Edit Post</h1>
+	<%= form_for @post do |f| %>
+		<%=f.text_area :body, placeholder: "Update your status...", :class => "post_body form-control" %>
+		<%=f.text_field :tag, placeholder: "#add tags to your post (i.e. #running, #yoga)", :class => "post_tag form-control" %>
+	  <p class="btn btn-default add-image-btn">Add Image</p>
+	  <p class="btn btn-default add-video-btn">Add Video</p>
+	  <p class="choose-file-btn"><%=f.file_field :avatar, :class => "post-avatar" %></p>
+	  <div class="choose-vid-file"><%=f.text_field :video, :placeholder => "Place video url here...", :class => "embed-video" %></div>
+		<%=f.submit 'Post', :class => "btn btn-default postBtn" %>
+	<% end %>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$('.add-image-btn').click(function(){
+			$('.choose-file-btn').show();
+			$('.choose-vid-file').hide();
+		});
+		$('.add-video-btn').click(function(){
+			$('.choose-vid-file').show();
+			$('.choose-file-btn').hide();
+		})
+	})
+</script>
+

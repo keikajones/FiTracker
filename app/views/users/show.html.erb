@@ -1,3 +1,4 @@
+<h1 class="title user-profile-title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
 <div class="user_wrapper">
 	<div class="bio-wrapper">
 		<div class="row profile-bio">
@@ -22,7 +23,6 @@
 	<nav class="user-nav">
 		<ul>
 			<li class="active" id="nav-posts"><%= link_to "Post's Feed", @user %></li>
-			<li id="nav-interests"><%= link_to "Interests", user_interests_user_path(@user) %></li>
 			<li id="nav-goals"><%= link_to "Goals", user_goals_user_path(@user) %></li>
 		</ul>
 	</nav>
@@ -34,7 +34,7 @@
 
 		<div class="row">
 			<ul class="user_posts_list">
-				<%= render partial: 'post', collection: current_user.posts %>
+				<%= render partial: 'post', collection: @user.posts %>
 			</ul>
 		</div>
 	</div>

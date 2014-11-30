@@ -1,4 +1,24 @@
-<li class="user_post_body"><%= post.body %></li>
+<%= image_tag @user.avatar.url, class: "post-user-avatar" %>
+<div class="post-info">
+	<p class="post-author"><%= @user.fname + " " + @user.lname %></p>
+	<p class="post-created"><%= post.created_at.strftime("%b. %d, %Y") %> at <%= post.created_at.strftime("%l:%m %p") %></p>
+</div>
+
+<li class="user_post_body"><%= post.body_html %></li>
+<li class="user_post_tag"><%= link_to post.tag, users_path %></li>
+
+<% if post.image_file_name == nil %>
+	<div></div>
+<% else %>
+	<li class="user_post_image"><%= image_tag post.image.url, class: "post-image" %></li>
+<% end %>
+
+<% if post.video == "" %>
+	<div></div>
+<% else %>
+	<li class="user_post_video"><%= video_tag post.video, width: "100%" %></li>
+<% end %>
+
 <li class="edit_user_post">
 	<% if current_user and @user == current_user %>
 		<%= link_to 'Edit Post', edit_post_path(post) %> |
