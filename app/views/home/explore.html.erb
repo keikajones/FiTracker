@@ -7,7 +7,7 @@
 				<li>
 					<h3><%= interest.name %></h3>
 					<ul class="interest-post-feed">
-						<li>
+						<li class="interest-post">
 							<% @posts.each do |post| %>
 								<% if post.tag == "#" + interest.name.downcase %>
 									<%= image_tag post.user.avatar.url, class: "post-user-avatar" %>

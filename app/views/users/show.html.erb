@@ -1,4 +1,4 @@
-<h1 class="title user-profile-title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
+<h1 class="title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
 <div class="user_wrapper">
 	<div class="bio-wrapper">
 		<div class="row profile-bio">
@@ -22,8 +22,8 @@
 
 	<nav class="user-nav">
 		<ul>
+			<li id="nav-goals"><%= link_to "My Goals", user_goals_user_path(@user) %></li>
 			<li class="active" id="nav-posts"><%= link_to "Post's Feed", @user %></li>
-			<li id="nav-goals"><%= link_to "Goals", user_goals_user_path(@user) %></li>
 		</ul>
 	</nav>
 	

@@ -1,0 +1,20 @@
+<h1 class="title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
+
+<div class="row edit_user_goals">
+	<h1 class="header edit-goal-header">Edit Goal</h1>
+	<p class="delete-post"><%= link_to 'Cancel', user_goals_user_path(@goal.user) %> | <%= link_to 'Delete Goal', goal_path(@goal), method: :delete, data: { confirm: "Are you sure you want to delete this goal?" } %></p>
+	<div class="goal-form">	
+		<%= form_for @goal do |f| %>
+			<% if @goal.errors.any? %>
+				<ul>
+					<% @goal.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			<% end %>
+
+			<%= f.text_area :body, placeholder: "What is your goal...", class: "form-control goal-body-input" %>
+			<%= f.submit 'Update', class: "btn btn-default edit-goalsBtn" %>
+		<% end %>
+	</div>
+</div>

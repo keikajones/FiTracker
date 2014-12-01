@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations" }
 
-  post 'users/interests', to: 'users#interests'
   post 'users/goals', to: 'users#goals'
 
   resources :users do

@@ -1,0 +1,13 @@
+<%= form_for @goal do |f| %>
+	<% if @goal.errors.any? %>
+		<ul>
+			<% @goal.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<%= f.text_area :body, placeholder: "What is your goal...", class: "form-control goal-body-input" %>
+	<p class="skip-goal"><%= link_to 'Skip', user_path(current_user) %></p>
+	<%= f.submit 'Save', class: "btn btn-default goalsBtn" %>
+<% end %>

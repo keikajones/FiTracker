@@ -17,7 +17,7 @@ class GoalsController < ApplicationController
 		@goals = Goal.order('created_at DESC')
 		if @goal.save
 			flash[:notice] = "New goal!"
-			redirect_to current_user
+			redirect_to user_goals_user_path(current_user)
 		else
 			flash[:notice] = "Something went wrong."
 			render :new
@@ -30,7 +30,7 @@ class GoalsController < ApplicationController
 	def update
 		if @goal.update(goal_params)
 			flash[:notice] = "Goal updated"
-			redirect_to current_user
+			redirect_to user_goals_user_path(current_user)
 		else
 			flash[:alert] = "Something went wrong."
 			render :edit
@@ -40,7 +40,7 @@ class GoalsController < ApplicationController
 	def destroy
 		@goal.destroy
 		flash[:notice] = "Goal deleted"
-		redirect_to current_user
+		redirect_to user_goals_user_path(current_user)
 	end
 
 	private

@@ -14,12 +14,25 @@ body {
   font-family: "Raleway";
   margin: 10px 0; }
 
+.title {
+  text-align: center;
+  font-size: 2em;
+  padding: 5px 0;
+  margin: 0;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  background-color: #485463; }
+  .title a {
+    color: white; }
+  .title #fit {
+    font-size: 1.2em; }
+
 a {
   text-decoration: none;
-  color: #3d4754; }
+  color: #485463; }
 
 a:hover {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #94adcc; }
 
 hr {
   color: #000;
@@ -28,7 +41,11 @@ hr {
 .menu-bars {
   position: absolute;
   right: 5px;
-  top: 5px; }
+  top: 5px;
+  color: white; }
+
+.menu-bars:hover {
+  color: #94adcc; }
 
 .explore-nav {
   width: 100%; }
@@ -43,9 +60,11 @@ hr {
       border-bottom: 1px solid #aaa;
       font-size: 1.5em; }
       .explore-nav ul li a {
-        color: #f5f6f5; }
+        color: white; }
+      .explore-nav ul li a:hover {
+        color: #94adcc; }
       .explore-nav ul li .menu-icon {
-        color: #f5f6f5;
+        color: white;
         margin-right: 15px;
         font-size: 1.5em; }
       .explore-nav ul li .profile-icon {
@@ -55,14 +74,17 @@ hr {
         margin-left: 6px;
         margin-right: 10px; }
 
-.sign-in-form .signinBtn-links .actions .signinBtn, .sign-up-form .signinBtn-links .actions .signinBtn, .sign-up-form .signup-view1 .continueBtn, .sign-up-form .signup-view2 .continueBtn, .interests-wrapper .interests-form .interestsBtn, .goal-wrapper .goal-form .goalsBtn {
+.sign-in-form .signinBtn-links .actions .signinBtn, .sign-up-form .signinBtn-links .actions .signinBtn, .sign-up-form .signup-view1 .continueBtn, .sign-up-form .signup-view2 .continueBtn, .interests-wrapper .interests-form .interestsBtn, .goal-wrapper .goal-form .goalsBtn, .edit_user_posts .postBtn, .add-goals .user-goals-form .goalsBtn, .edit_user_goals .edit-goalsBtn {
   height: 30px;
   width: 100%;
   max-width: 400px;
-  padding-top: 4px;
-  background-color: #ff5f47;
+  padding-top: 5px;
+  background-color: #ffd100;
   border: none;
-  color: #fff; }
+  color: #485463; }
+
+.sign-in-form .signinBtn-links .actions .signinBtn:hover, .sign-up-form .signinBtn-links .actions .signinBtn:hover, .sign-up-form .signup-view1 .continueBtn:hover, .sign-up-form .signup-view2 .continueBtn:hover, .interests-wrapper .interests-form .interestsBtn:hover, .goal-wrapper .goal-form .goalsBtn:hover, .edit_user_posts .postBtn:hover, .add-goals .user-goals-form .goalsBtn:hover, .edit_user_goals .edit-goalsBtn:hover {
+  color: white; }
 
 /****************************************************
 PAGE - ROOT
@@ -79,13 +101,13 @@ PAGE - ROOT
 .notice, .alert {
   position: absolute; }
 
-.title, .sign-in-bkimg .signin-title {
+.main-title, .sign-in-bkimg .signin-title {
   text-align: center;
   font-size: 3em;
   margin-top: 100px;
   font-family: 'Montserrat Subrayada', sans-serif;
-  color: #3d4754; }
-  .title #fit, .sign-in-bkimg .signin-title #fit {
+  color: #485463; }
+  .main-title #fit, .sign-in-bkimg .signin-title #fit {
     font-size: 1.2em; }
 
 #intro-copy {
@@ -122,7 +144,9 @@ PAGE - SIGN IN
     padding-top: 290px;
     font-size: 3em; }
     .sign-in-bkimg .signin-title a {
-      color: #3d4754; }
+      color: #485463; }
+    .sign-in-bkimg .signin-title a:hover {
+      color: #94adcc; }
 
 .sign-in-form, .sign-up-form {
   width: 80%;
@@ -188,7 +212,7 @@ PAGE - INTERESTS FORM
     top: 255px; }
     .interests-bkimg .interests-copy-wrapper .interests-copy {
       padding: 3px 15px;
-      color: #3d4754;
+      color: white;
       font-family: "Raleway";
       font-size: 1.5em;
       text-align: left; }
@@ -225,40 +249,42 @@ PAGE - INTERESTS FORM
         clear: left; }
 
 /****************************************************
-PAGE - GOALS
+PAGE - NEW GOAL
 *****************************************************/
 .goal-wrapper {
-  width: 100%;
+  width: 90%;
+  max-width: 400px;
   margin: 0 auto; }
   .goal-wrapper .goal-form {
-    width: 90%;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto;
-    margin-top: 50px; }
+    margin-top: 20px; }
     .goal-wrapper .goal-form .goal-body-input {
+      height: 100px;
       margin-bottom: 15px; }
+    .goal-wrapper .goal-form .skip-goal {
+      float: right;
+      margin-top: -10px;
+      margin-right: 5px; }
 
 /****************************************************
 PAGE - USER PUBLIC PROFILE
 *****************************************************/
-.user-profile-title {
-  font-size: 2em;
-  padding-top: 5px;
-  margin: 0 auto;
-  background-color: #8acdce; }
-
 .user_wrapper {
   width: 100%;
   margin: 0 auto;
   padding: 0; }
   .user_wrapper .bio-wrapper {
     width: 100%;
-    background-color: #8acdce;
+    background-color: #485463;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    color: white; }
     .user_wrapper .bio-wrapper .profile-bio {
       width: 90%;
       margin: 0 auto;
-      padding: 30px 0 10px; }
+      padding: 20px 0 10px; }
       .user_wrapper .bio-wrapper .profile-bio .profile-pic .profile-image {
         float: left;
         width: 30%;
@@ -279,17 +305,23 @@ PAGE - USER PUBLIC PROFILE
   .user_wrapper .user-nav {
     width: 100%;
     margin: 0 auto;
-    background-color: #f5f6f5;
-    padding: 5px 0; }
+    background-color: #f5f6f5; }
     .user_wrapper .user-nav ul {
       list-style: none;
       padding-left: 0;
-      width: 95%;
+      width: 100%;
       margin: 0 auto; }
       .user_wrapper .user-nav ul li {
         display: inline-block;
-        margin: 0 35px;
-        text-align: center; }
+        width: 49.6%;
+        text-align: center;
+        padding: 5px 0; }
+        .user_wrapper .user-nav ul li a {
+          color: #485463; }
+      .user_wrapper .user-nav ul .active {
+        background-color: #ffd100; }
+        .user_wrapper .user-nav ul .active a {
+          color: #485463; }
   .user_wrapper .user-posts-section .user_posts {
     width: 90%;
     margin: 20px auto; }
@@ -330,7 +362,6 @@ PAGE - USER PUBLIC PROFILE
         border: 1px solid #bbb; }
     .user_wrapper .user-posts-section .user_posts .postBtn {
       display: block;
-      margin-top: 10px;
       width: 70px;
       height: 25px;
       padding-top: 3px; }
@@ -365,7 +396,12 @@ PAGE - EDIT USER POSTS
 .edit_user_posts {
   width: 90%;
   margin: 0 auto;
-  margin-top: 50px; }
+  margin-top: 20px; }
+  .edit_user_posts .edit-post-header {
+    display: inline-block; }
+  .edit_user_posts .delete-post {
+    display: inline-block;
+    margin-left: 150px; }
   .edit_user_posts .post_body {
     width: 100%;
     height: 200px;
@@ -401,11 +437,54 @@ PAGE - EDIT USER POSTS
       border-radius: 3px;
       border: 1px solid #bbb; }
   .edit_user_posts .postBtn {
-    display: block;
-    margin-top: 10px;
-    width: 70px;
-    height: 25px;
-    padding-top: 3px; }
+    margin-top: 10px; }
+
+/****************************************************
+PAGE - USER GOALS
+*****************************************************/
+.user-goals {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px; }
+  .user-goals .user-goals-list {
+    list-style: none;
+    padding-left: 0; }
+    .user-goals .user-goals-list .edit-goal-link {
+      text-align: right;
+      font-size: 0.8em; }
+
+.add-goals {
+  width: 90%;
+  margin: 20px auto 0; }
+  .add-goals .add-goal-btn {
+    font-size: 2em;
+    width: 35px;
+    height: 35px;
+    padding: 0 5px 15px; }
+  .add-goals .user-goals-form {
+    display: none;
+    width: 100%;
+    margin: 10px auto 0; }
+    .add-goals .user-goals-form .skip-goal {
+      display: none; }
+    .add-goals .user-goals-form .goalsBtn {
+      margin-top: 10px; }
+
+/****************************************************
+PAGE - EDIT USER GOALS
+*****************************************************/
+.edit_user_goals {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px; }
+  .edit_user_goals .goal-body-input {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 5px; }
+  .edit_user_goals .edit-goalsBtn {
+    margin-top: 10px; }
 
 /****************************************************
 PAGE - HOME
@@ -415,12 +494,12 @@ PAGE - HOME
   padding-top: 5px;
   padding-bottom: 15px;
   margin: 0;
-  background-color: #8acdce; }
+  background-color: #485463; }
 
 .user-index-wrapper {
   width: 100%;
   margin: 0 auto;
-  background-color: #8acdce; }
+  background-color: #485463; }
   .user-index-wrapper .user-feed {
     width: 95%;
     max-width: 530px;
@@ -451,7 +530,7 @@ PAGE - HOME
 PAGE - EXPLORE (INTERESTS)
 *****************************************************/
 .explore-container {
-  background-color: #8acdce;
+  background-color: #485463;
   height: 800px; }
 
 .explore-title {
@@ -470,7 +549,7 @@ PAGE - EXPLORE (INTERESTS)
       margin-bottom: 20px; }
 
 #accordian {
-  background: #8acdce;
+  background: #485463;
   width: 100%;
   color: #f5f6f5;
   /*Some cool shadow and glow effect*/ }
@@ -478,11 +557,13 @@ PAGE - EXPLORE (INTERESTS)
 /*heading styles*/
 #accordian h3 {
   line-height: 50px;
+  font-size: 1.5em;
+  font-family: "Raleway";
   padding: 0 10px;
   margin: -20px 0;
   cursor: pointer;
   /*fallback for browsers not supporting gradients*/
-  background: linear-gradient(#003040, #002535); }
+  background: linear-gradient(#ffd100, #c28d00); }
 
 #accordian ul {
   padding: 0; }
@@ -497,12 +578,13 @@ PAGE - EXPLORE (INTERESTS)
 
 /*links*/
 #accordian ul ul li {
-  color: #3d4754;
+  color: #485463;
   text-decoration: none;
   font-size: 1em;
+  text-align: left;
   line-height: auto;
   display: block;
-  padding: 40px 0;
+  padding: 20px 0 0;
   margin: 20px 0;
   /*transition for smooth hover animation*/
   transition: all 0.15s;
@@ -518,11 +600,21 @@ PAGE - EXPLORE (INTERESTS)
 .interest-post-feed {
   list-style: none;
   padding-left: 0; }
-  .interest-post-feed .post-user-avatar {
-    max-height: 100px;
-    max-width: 100px;
-    display: inline-block; }
-  .interest-post-feed .post-info {
-    display: inline-block; }
-    .interest-post-feed .post-info .post-author {
-      margin-left: -50px; }
+  .interest-post-feed .interest-post {
+    width: 100%; }
+    .interest-post-feed .interest-post .post-user-avatar {
+      max-height: 50px;
+      max-width: 50px;
+      display: inline-block;
+      margin-left: 20px; }
+    .interest-post-feed .interest-post .post-info {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 0.8em;
+      line-height: 0.7; }
+    .interest-post-feed .interest-post .user_post_body {
+      margin: 10px 0 0px 20px; }
+    .interest-post-feed .interest-post .user_post_tag {
+      margin: 10px 0 0px 20px; }
+    .interest-post-feed .interest-post .post-image {
+      width: 100%; }

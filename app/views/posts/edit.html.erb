@@ -1,5 +1,7 @@
+<h1 class="title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
 <div class="row edit_user_posts">
 	<h1 class="header edit-post-header">Edit Post</h1>
+	<p class="delete-post"><%= link_to 'Cancel', user_path(@post.user) %> | <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %></p>
 	<%= form_for @post do |f| %>
 		<%=f.text_area :body, placeholder: "Update your status...", :class => "post_body form-control" %>
 		<%=f.text_field :tag, placeholder: "#add tags to your post (i.e. #running, #yoga)", :class => "post_tag form-control" %>
@@ -7,7 +9,7 @@
 	  <p class="btn btn-default add-video-btn">Add Video</p>
 	  <p class="choose-file-btn"><%=f.file_field :avatar, :class => "post-avatar" %></p>
 	  <div class="choose-vid-file"><%=f.text_field :video, :placeholder => "Place video url here...", :class => "embed-video" %></div>
-		<%=f.submit 'Post', :class => "btn btn-default postBtn" %>
+		<%=f.submit 'Update', :class => "btn btn-default postBtn" %>
 	<% end %>
 </div>
 

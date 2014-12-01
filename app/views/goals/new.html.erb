@@ -1,16 +1,9 @@
-<div class="goal-wrapper">	
-	<div class="row goal-form">	
-		<%= form_for @goal do |f| %>
-			<% if @goal.errors.any? %>
-				<ul>
-					<% @goal.errors.full_messages.each do |message| %>
-						<li><%= message %></li>
-					<% end %>
-				</ul>
-			<% end %>
+<h1 class="title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
 
-			<%= f.text_area :body, placeholder: "What is your goal...", class: "form-control goal-body-input" %>
-			<%= f.submit 'Save', class: "btn btn-default goalsBtn" %>
-		<% end %>
+<div class="goal-wrapper">
+	<h3 class="goal-copy">Create a Goal</h3>
+	<p>Anything that can be accomplished in a day to a year, and we'll help you get there!</p>
+	<div class="row goal-form">	
+		<%= render 'form' %>
 	</div>
 </div>
