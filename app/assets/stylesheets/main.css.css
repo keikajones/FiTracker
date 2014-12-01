@@ -56,25 +56,17 @@ hr {
     margin: 0; }
     .explore-nav ul li {
       margin-bottom: 10px;
+      padding-left: 10px;
       padding-bottom: 10px;
       border-bottom: 1px solid #aaa;
-      font-size: 1.5em; }
+      font-size: 1.5em;
+      font-family: "Raleway"; }
       .explore-nav ul li a {
         color: white; }
       .explore-nav ul li a:hover {
         color: #94adcc; }
-      .explore-nav ul li .menu-icon {
-        color: white;
-        margin-right: 15px;
-        font-size: 1.5em; }
-      .explore-nav ul li .profile-icon {
-        margin-left: 4px;
-        margin-right: 17px; }
-      .explore-nav ul li .logout-icon {
-        margin-left: 6px;
-        margin-right: 10px; }
 
-.sign-in-form .signinBtn-links .actions .signinBtn, .sign-up-form .signinBtn-links .actions .signinBtn, .sign-up-form .signup-view1 .continueBtn, .sign-up-form .signup-view2 .continueBtn, .interests-wrapper .interests-form .interestsBtn, .goal-wrapper .goal-form .goalsBtn, .edit_user_posts .postBtn, .add-goals .user-goals-form .goalsBtn, .edit_user_goals .edit-goalsBtn {
+.sign-in-form .signinBtn-links .actions .signinBtn, .sign-up-form .signinBtn-links .actions .signinBtn, .sign-up-form .signup-view1 .continueBtn, .sign-up-form .signup-view2 .continueBtn, .interests-wrapper .interests-form .interestsBtn, .goal-wrapper .goal-form .goalsBtn, .edit_user_posts .postBtn, .show-posts-wrapper .post-comment-btn, .add-goals .user-goals-form .goalsBtn, .edit_user_goals .goalsBtn {
   height: 30px;
   width: 100%;
   max-width: 400px;
@@ -83,7 +75,7 @@ hr {
   border: none;
   color: #485463; }
 
-.sign-in-form .signinBtn-links .actions .signinBtn:hover, .sign-up-form .signinBtn-links .actions .signinBtn:hover, .sign-up-form .signup-view1 .continueBtn:hover, .sign-up-form .signup-view2 .continueBtn:hover, .interests-wrapper .interests-form .interestsBtn:hover, .goal-wrapper .goal-form .goalsBtn:hover, .edit_user_posts .postBtn:hover, .add-goals .user-goals-form .goalsBtn:hover, .edit_user_goals .edit-goalsBtn:hover {
+.sign-in-form .signinBtn-links .actions .signinBtn:hover, .sign-up-form .signinBtn-links .actions .signinBtn:hover, .sign-up-form .signup-view1 .continueBtn:hover, .sign-up-form .signup-view2 .continueBtn:hover, .interests-wrapper .interests-form .interestsBtn:hover, .goal-wrapper .goal-form .goalsBtn:hover, .edit_user_posts .postBtn:hover, .show-posts-wrapper .post-comment-btn:hover, .add-goals .user-goals-form .goalsBtn:hover, .edit_user_goals .goalsBtn:hover {
   color: white; }
 
 /****************************************************
@@ -126,7 +118,7 @@ PAGE - ROOT
     width: 180px;
     height: 50px;
     margin: 0 auto 15px;
-    background-color: #f5f6f5; }
+    background-color: #eaebea; }
 
 /****************************************************
 PAGE - SIGN IN
@@ -262,10 +254,16 @@ PAGE - NEW GOAL
     margin-top: 20px; }
     .goal-wrapper .goal-form .goal-body-input {
       height: 100px;
-      margin-bottom: 15px; }
+      margin-bottom: 5px; }
+    .goal-wrapper .goal-form .form-label {
+      font-size: 0.9em; }
+    .goal-wrapper .goal-form #goal_timeline {
+      margin-left: 5px;
+      margin-bottom: 15px;
+      font-size: 0.8em; }
     .goal-wrapper .goal-form .skip-goal {
       float: right;
-      margin-top: -10px;
+      margin-top: 20px;
       margin-right: 5px; }
 
 /****************************************************
@@ -305,7 +303,7 @@ PAGE - USER PUBLIC PROFILE
   .user_wrapper .user-nav {
     width: 100%;
     margin: 0 auto;
-    background-color: #f5f6f5; }
+    background-color: #eaebea; }
     .user_wrapper .user-nav ul {
       list-style: none;
       padding-left: 0;
@@ -440,6 +438,63 @@ PAGE - EDIT USER POSTS
     margin-top: 10px; }
 
 /****************************************************
+PAGE - SHOW POSTS
+*****************************************************/
+.show-posts-wrapper {
+  width: 90%;
+  margin: 20px auto 0;
+  list-style: none;
+  width: 90%; }
+  .show-posts-wrapper .post-user-avatar {
+    display: inline-block;
+    max-width: 80px;
+    max-height: 80px; }
+  .show-posts-wrapper .post-info {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+    font-size: 0.8em; }
+    .show-posts-wrapper .post-info .post-author {
+      margin: 0; }
+    .show-posts-wrapper .post-info .post-created {
+      margin: 0; }
+  .show-posts-wrapper .user_post_body {
+    margin: 10px 0; }
+  .show-posts-wrapper .user_post_tag {
+    margin: 10px 0; }
+  .show-posts-wrapper .user_post_image .post-image {
+    width: 100%; }
+  .show-posts-wrapper .edit_user_post {
+    text-align: right;
+    margin-top: 10px; }
+  .show-posts-wrapper .comments-section .comments-list {
+    background-color: #eaebea;
+    padding: 8px 8px 0;
+    border-radius: 5px;
+    list-style: none; }
+    .show-posts-wrapper .comments-section .comments-list .comment-user-avatar {
+      max-width: 40px;
+      max-height: 40px; }
+    .show-posts-wrapper .comments-section .comments-list .comment-info {
+      display: inline-block;
+      margin: 5px 5px 0;
+      vertical-align: top;
+      font-size: 0.8em;
+      line-height: 0.6; }
+    .show-posts-wrapper .comments-section .comments-list .comment-body {
+      margin-top: 10px;
+      font-size: 0.9em; }
+    .show-posts-wrapper .comments-section .comments-list .comments-divider {
+      height: 1px;
+      background-color: #fff;
+      margin: 10px 0; }
+    .show-posts-wrapper .comments-section .comments-list .edit_user_comment {
+      font-size: 0.8em;
+      text-align: right; }
+  .show-posts-wrapper .post-comment-btn {
+    margin: 10px 0; }
+
+/****************************************************
 PAGE - USER GOALS
 *****************************************************/
 .user-goals {
@@ -449,26 +504,52 @@ PAGE - USER GOALS
   .user-goals .user-goals-list {
     list-style: none;
     padding-left: 0; }
+    .user-goals .user-goals-list .goal-body {
+      font-size: 1.35em; }
     .user-goals .user-goals-list .edit-goal-link {
       text-align: right;
       font-size: 0.8em; }
 
 .add-goals {
   width: 90%;
-  margin: 20px auto 0; }
+  margin: 0 auto; }
+  .add-goals .plus {
+    font-size: 2em; }
   .add-goals .add-goal-btn {
-    font-size: 2em;
-    width: 35px;
+    display: inline-block;
+    font-size: 1em;
+    width: 100px;
     height: 35px;
-    padding: 0 5px 15px; }
+    margin-left: 10px;
+    vertical-align: 5px; }
   .add-goals .user-goals-form {
     display: none;
     width: 100%;
-    margin: 10px auto 0; }
+    margin: 0 auto; }
+    .add-goals .user-goals-form #goal_timeline {
+      margin-left: 5px;
+      margin-bottom: 15px;
+      font-size: 0.8em; }
     .add-goals .user-goals-form .skip-goal {
       display: none; }
     .add-goals .user-goals-form .goalsBtn {
       margin-top: 10px; }
+
+.modal-dialog {
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 50%; }
+  .modal-dialog h4 {
+    width: 90%;
+    padding: 10px 0;
+    border-bottom: 1px solid #aaa;
+    margin: 0 auto;
+    line-height: 1.5; }
+  .modal-dialog .close-modal {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 1.5em; }
 
 /****************************************************
 PAGE - EDIT USER GOALS
@@ -477,13 +558,24 @@ PAGE - EDIT USER GOALS
   width: 90%;
   margin: 0 auto;
   margin-top: 20px; }
+  .edit_user_goals .edit-goal-header {
+    display: inline-block; }
+  .edit_user_goals .delete-post {
+    display: inline-block;
+    margin-left: 150px; }
   .edit_user_goals .goal-body-input {
     width: 100%;
     height: 200px;
-    margin: 0 auto;
+    margin: 0 auto 5px;
     padding: 3px;
     border-radius: 5px; }
-  .edit_user_goals .edit-goalsBtn {
+  .edit_user_goals #goal_timeline {
+    margin-left: 5px;
+    margin-bottom: 15px;
+    font-size: 0.8em; }
+  .edit_user_goals .skip-goal {
+    display: none; }
+  .edit_user_goals .goalsBtn {
     margin-top: 10px; }
 
 /****************************************************
@@ -551,7 +643,7 @@ PAGE - EXPLORE (INTERESTS)
 #accordian {
   background: #485463;
   width: 100%;
-  color: #f5f6f5;
+  color: #eaebea;
   /*Some cool shadow and glow effect*/ }
 
 /*heading styles*/

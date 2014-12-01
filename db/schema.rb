@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130185500) do
+ActiveRecord::Schema.define(version: 20141201185806) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141130185500) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "timeline"
   end
 
   add_index "goals", ["user_id"], name: "index_goals_on_user_id"

@@ -6,7 +6,7 @@ $tertiary-color: #485463;
 $primary-background-color: #485463;
 $secondary-background-color: #DDE1DC;
 $tertiary-background-color: #FFD100;
-$quaternary-background-color: #F5F6F5;
+$quaternary-background-color: #EAEBEA;
 
 /****************************************************
 GENERAL
@@ -78,27 +78,16 @@ hr{
 		margin: 0;
 		li{
 			margin-bottom: 10px;
+			padding-left: 10px;
 			padding-bottom: 10px;
 			border-bottom: 1px solid #aaa;
 			font-size: 1.5em;
+			font-family: $secondary-font-family;
 			a{
 				color: $primary-color;
 			}
 			a:hover{
 				color: $secondary-color;
-			}
-			.menu-icon{
-				color: $primary-color;
-				margin-right: 15px;
-				font-size: 1.5em;
-			}
-			.profile-icon{
-				margin-left: 4px;
-				margin-right: 17px;
-			}
-			.logout-icon{
-				margin-left: 6px;
-				margin-right: 10px;
 			}
 		}
 	}
@@ -347,11 +336,19 @@ PAGE - NEW GOAL
 		margin-top: 20px;
 		.goal-body-input{
 			height: 100px;
+			margin-bottom: 5px;
+		}
+		.form-label{
+			font-size: 0.9em;
+		}
+		#goal_timeline{
+			margin-left: 5px;
 			margin-bottom: 15px;
+			font-size: 0.8em;
 		}
 		.skip-goal{
 			float: right;
-			margin-top: -10px;
+			margin-top: 20px;
 			margin-right: 5px;
 		}
 		.goalsBtn{
@@ -526,6 +523,8 @@ PAGE - USER PUBLIC PROFILE
 			.edit_user_post{
 				text-align: right;
 				margin-top: 10px;
+				.comments{
+				}
 			}
 		}
 	}
@@ -599,6 +598,89 @@ PAGE - EDIT USER POSTS
 
 
 /****************************************************
+PAGE - SHOW POSTS
+*****************************************************/
+
+.show-posts-wrapper{
+	width: 90%;
+	margin: 20px auto 0;
+	.post-user-avatar{
+		display: inline-block;
+		max-width: 80px;
+		max-height: 80px;
+	}
+	.post-info{
+		display: inline-block;
+		margin-left: 5px;
+		vertical-align: top;
+		font-size: 0.8em;
+		.post-author{
+			margin: 0;
+		}
+		.post-created{
+			margin: 0;
+		}
+	}
+	list-style: none;
+	width: 90%;
+	.user_post_body{
+		margin: 10px 0;
+	}
+	.user_post_tag{
+		margin: 10px 0;
+	}
+	.user_post_image{
+		.post-image{
+			width: 100%;
+		}
+	}
+	.user_post_video{
+
+	}
+	.edit_user_post{
+		text-align: right;
+		margin-top: 10px;
+	}
+	.comments-section{
+		.comments-list{
+			background-color: $quaternary-background-color;
+			padding: 8px 8px 0;
+			border-radius: 5px;
+			list-style: none;
+			.comment-user-avatar{
+				max-width: 40px;
+				max-height: 40px;
+			}
+			.comment-info{
+				display: inline-block;
+				margin: 5px 5px 0;
+				vertical-align: top;
+				font-size: 0.8em;
+				line-height: 0.6;
+			}
+			.comment-body{
+				margin-top: 10px;
+				font-size: 0.9em;
+			}
+			.comments-divider{
+				height: 1px;
+				background-color: #fff;
+				margin: 10px 0;
+			}
+			.edit_user_comment{
+				font-size: 0.8em;
+				text-align: right;
+			}
+		}
+	}
+	.post-comment-btn{
+		@extend %buttons;
+		margin: 10px 0;
+	}
+}
+
+
+/****************************************************
 PAGE - USER GOALS
 *****************************************************/
 
@@ -612,7 +694,12 @@ PAGE - USER GOALS
 		li{
 			
 		}
+		.goal-created{
+		}
 		.goal-body{
+			font-size: 1.35em;
+		}
+		.update-progress{
 
 		}
 		.edit-goal-link{
@@ -624,19 +711,32 @@ PAGE - USER GOALS
 
 .add-goals{
 	width: 90%;
-	margin: 20px auto 0;
-	.add-goal-btn{
+	margin: 0 auto;
+	.plus{
 		font-size: 2em;
-		width: 35px;
+	}
+	.add-goal-btn{
+		display: inline-block;
+		font-size: 1em;
+		width: 100px;
 		height: 35px;
-		padding: 0 5px 15px;
+		margin-left: 10px;
+		vertical-align: 5px;
 	}
 	.user-goals-form{
 		display: none;
 		width: 100%;
-		margin: 10px auto 0;
+		margin: 0 auto;
 		.goal-body-input{
 
+		}
+		.form-label{
+
+		}
+		#goal_timeline{
+			margin-left: 5px;
+			margin-bottom: 15px;
+			font-size: 0.8em;
 		}
 		.skip-goal{
 			display: none;
@@ -645,6 +745,25 @@ PAGE - USER GOALS
 			@extend %buttons;
 			margin-top: 10px;
 		}
+	}
+}
+
+.modal-dialog{
+	text-align: center;
+	border-radius: 5px;
+	margin-top: 50%;
+	h4{
+		width: 90%;
+		padding: 10px 0;
+		border-bottom: 1px solid #aaa;
+		margin: 0 auto;
+		line-height: 1.5;
+	}
+	.close-modal{
+		position: absolute;
+		top: 0;
+		right: 5px;
+		font-size: 1.5em;
 	}
 }
 
@@ -657,14 +776,32 @@ PAGE - EDIT USER GOALS
 	width: 90%;
 	margin: 0 auto;
 	margin-top: 20px;
+	.edit-goal-header{
+		display: inline-block;
+	}
+	.delete-post{
+		display: inline-block;
+		margin-left: 150px;
+	}
 	.goal-body-input{
 		width: 100%;
 		height: 200px;
-		margin: 0 auto;
+		margin: 0 auto 5px;
 		padding: 3px;
 		border-radius: 5px;
 	}
-	.edit-goalsBtn{
+	.form-label{
+
+	}
+	#goal_timeline{
+		margin-left: 5px;
+		margin-bottom: 15px;
+		font-size: 0.8em;
+	}
+	.skip-goal{
+		display: none;
+	}
+	.goalsBtn{
 		@extend %buttons;
 		margin-top: 10px;
 	}

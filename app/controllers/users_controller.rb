@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   def show
     @post = Post.new
-    # @posts = Post.subscribed current_user.followeds
+    @comment = Comment.new
   end
 
   def user_goals
@@ -42,6 +42,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @post = Post.new
+    @comment = Comment.new
   end
 
   def edit

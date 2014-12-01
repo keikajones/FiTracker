@@ -1,0 +1,4 @@
+<%= form_for ([@post, @comment]) do |f| %>
+	<%= f.text_area :body, :class => "comment_box" %><br />
+	<%= f.submit 'Post'%>
+<% end %>

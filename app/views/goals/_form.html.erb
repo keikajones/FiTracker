@@ -8,6 +8,8 @@
 	<% end %>
 
 	<%= f.text_area :body, placeholder: "What is your goal...", class: "form-control goal-body-input" %>
-	<p class="skip-goal"><%= link_to 'Skip', user_path(current_user) %></p>
+	<%= f.label :timeline, class: "form-label" %>
+	<%= f.select(:timeline, options_for_select([['Choose One', 0],['Day', 1],['Week', 2],['Month', 3],['Year', 4]])) %>
+	<p class="skip-goal"><%= link_to 'Skip', user_goals_user_path(current_user) %></p>
 	<%= f.submit 'Save', class: "btn btn-default goalsBtn" %>
 <% end %>

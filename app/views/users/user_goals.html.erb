@@ -31,9 +31,11 @@
 		<ul class="user-goals-list">
 			<% @user.goals.each do |goal| %>
 				<li class="goal-body"><%= goal.body %></li>
+				<li class="goal-created">Start Date: <%= goal.created_at.strftime("%m/%d/%Y") %></li>
+				<li class="goal-timeline">Timeline: <%= display_timeline(goal) %></li>
 				<li class="edit_user_goal">
 					<% if current_user and @user == current_user %>
-						<p class="edit-goal-link"><%= link_to 'Edit Goal', edit_goal_path(goal) %></p>
+						<p class="edit-goal-link"><a href="#" class="update-progress">Update Progress</a> | <%= link_to 'Edit Goal', edit_goal_path(goal) %></p>
 						<hr>
 					<% end %>
 				</li>
@@ -42,7 +44,7 @@
 	</div>
 
 	<div class="row add-goals">
-		<button class="btn btn-default add-goal-btn">+</button>
+		<a href="#"><span class="plus">+</span><p class="add-goal-btn">Add a Goal</p></a>
 		<div class="row user-goals-form">	
 			<%= render 'goals/form' %>
 		</div>
