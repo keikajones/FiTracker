@@ -1,36 +1,39 @@
 <div class="explore-container">
 	<h1 class="title explore-title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
-
+	<h2 class="explore-copy">Explore Your Interests</h2>
 	<div id="accordian" class="row user-interests">
-		<ul class="user-interests-list">
-			<% current_user.interests.each do |interest| %>
-				<li>
-					<h3><%= interest.name %></h3>
-					<ul class="interest-post-feed">
-						<li class="interest-post">
-							<% @posts.each do |post| %>
-								<% if post.tag == "#" + interest.name.downcase %>
-									<%= image_tag post.user.avatar.url, class: "post-user-avatar" %>
-									<div class="post-info">
-										<p class="post-author"><%= link_to post.user.fname + " " + post.user.lname, user_path(post.user) %></p>
-										<p class="post-created"><%= post.created_at.strftime("%b. %d, %Y") %> at <%= post.created_at.strftime("%l:%m %p") %></p>
-									</div>
-									<div class="user_post_body"><%= post.body_html %></div>
-									<div class="user_post_tag"><%= link_to post.tag, users_path %></div>
-									<% if post.image_file_name == nil %>
-										<div></div>
-									<% else %>
-										<div class="user_post_image"><%= image_tag post.image.url, class: "post-image" %></div>
-									<% end %>
-									<hr>
-								<% end %>
-							<% end %>
-						</li>
-					</ul>
-				</li>
-			<% end %>
-		</ul>
+		<%= render 'accordian' %>
 	</div>
+
+	<div class="interest-section">
+		<% current_user.interests.each do |interest| %>
+			<div class="interest-divs">
+				<h3><%= interest.name %></h3>
+				<div class="interest-post-feed">
+					<li class="interest-post">
+						<% @posts.each do |post| %>
+							<% if post.tag == "#" + interest.name.downcase %>
+								<%= image_tag post.user.avatar.url, class: "post-user-avatar" %>
+								<div class="post-info">
+									<p class="post-author"><%= link_to post.user.fname + " " + post.user.lname, user_path(post.user) %></p>
+									<p class="post-created"><%= post.created_at.strftime("%b. %d, %Y") %> at <%= post.created_at.strftime("%l:%m %p") %></p>
+								</div>
+								<div class="user_post_body"><%= post.body_html %></div>
+								<div class="user_post_tag"><%= link_to post.tag, users_path %></div>
+								<% if post.image_file_name == nil %>
+									<div></div>
+								<% else %>
+									<div class="user_post_image"><%= image_tag post.image.url, class: "post-image" %></div>
+								<% end %>
+								<hr>
+							<% end %>
+						<% end %>
+					</li>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
 </div>
 
 <!-- prefix free to deal with vendor prefixes -->

@@ -33,6 +33,7 @@ class UsersController < ApplicationController
   def show
     @post = Post.new
     @comment = Comment.new
+    @goal = Goal.new
   end
 
   def user_goals

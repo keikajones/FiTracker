@@ -1,44 +1,57 @@
 <h1 class="title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
-<div class="user_wrapper">
-	<div class="bio-wrapper">
-		<div class="row profile-bio">
-			<div class="profile-pic"><%= image_tag @user.avatar.url(:thumb), class: "profile-image" %></div>
-			<div class="user-info">	
-				<h1 class="user_name"><%= @user.fname + " " + @user.lname %></h1>
-				<p class="location"><%= @user.location %></p>
-				<% if current_user and @user != current_user %>
-					<% if current_user.followeds.include? @user %>
-						<p><%= link_to 'Unfollow', unfollow_user_path(@user), method: :post %></p>
-					<% else %>
-						<p><%= link_to 'Follow', follow_user_path(@user),method: :post %></p>
+<div class="page-wrapper">	
+	<div class="user_wrapper">
+		<div class="bio-wrapper">
+			<div class="row profile-bio">
+				<div class="profile-pic"><%= image_tag @user.avatar.url(:thumb), class: "profile-image" %></div>
+				<div class="user-info">	
+					<h1 class="user_name"><%= @user.fname + " " + @user.lname %></h1>
+					<p class="location"><%= @user.location %></p>
+					<% if current_user and @user != current_user %>
+						<% if current_user.followeds.include? @user %>
+							<p><%= link_to 'Unfollow', unfollow_user_path(@user), method: :post %></p>
+						<% else %>
+							<p><%= link_to 'Follow', follow_user_path(@user),method: :post %></p>
+						<% end %>
 					<% end %>
-				<% end %>
+					<% if current_user and @user == current_user %>
+						<p><%= link_to 'Edit Profile', edit_user_registration_path %></p>
+					<% end %>
+				</div>
+			</div>
+			<div class="row user-bio">
+				<p><%= @user.bio %></p>
 			</div>
 		</div>
-		<div class="row user-bio">
-			<p><%= @user.bio %></p>
+
+		<div class="user-following-side-menu">
+			<%= render 'follow' %>
+		</div>	
+		
+		<div class="user-posts-section">
+			<nav class="user-nav">
+				<ul>
+					<li id="nav-goals"><%= link_to "My Goals", user_goals_user_path(@user) %></li><!--
+					--><li class="active" id="nav-posts"><%= link_to "Post Feed", @user %></li>
+				</ul>
+			</nav>
+			<div class="row user_posts">
+				<% if current_user and @user == current_user %>
+					<%= render 'post_form' %>
+				<% else %>
+					<%= render 'send_post' %>
+				<% end %>
+			</div>
+
+			<hr class="post-form-divider">
+
+			<div class="row">
+				<ul class="user_posts_list">
+					<%= render partial: 'post', collection: @user.posts %>
+				</ul>
+			</div>
 		</div>
 	</div>
-
-	<nav class="user-nav">
-		<ul>
-			<li id="nav-goals"><%= link_to "My Goals", user_goals_user_path(@user) %></li>
-			<li class="active" id="nav-posts"><%= link_to "Post's Feed", @user %></li>
-		</ul>
-	</nav>
-	
-	<div class="user-posts-section">
-		<div class="row user_posts">
-			<%= render 'post_form' %>
-		</div>
-
-		<div class="row">
-			<ul class="user_posts_list">
-				<%= render partial: 'post', collection: @user.posts %>
-			</ul>
-		</div>
-	</div>
-	
 </div>
 
 

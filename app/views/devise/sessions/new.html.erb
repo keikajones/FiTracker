@@ -1,23 +1,17 @@
 <div class="sign-in-bkimg">
   <h1 class="signin-title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
 </div>
-<div class="container-fluid sign-in-form"> 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "form-control" %>
-    </div>
 
-    <div class="field">
-      <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "form-control" %>
-    </div>
-    
-    <div class="signinBtn-links">
-      <div class="actions">
-        <%= f.submit "Sign In", class: "btn btn-default signinBtn" %>
-      </div><br>
-
-      <%= render "devise/shared/links" %>
-    </div>
-  <% end %>
-
+<div class="sign-in-wrapper">
+  <div class="sign-in-form"> 
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "form-control field" %>
+      <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "form-control field" %>
+      <%= f.submit "Sign In", class: "btn btn-default signinBtn" %><br><br>
+      
+      <div class="signinBtn-links">
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -1,0 +1,16 @@
+<%= form_for @post, :html => { :multipart => true } do |f| %>
+	<%=f.text_area :body, placeholder: "Send a post...", :class => "post_body form-control" %>
+	<%=f.text_field :tag, placeholder: "#add tags to your post (i.e. #running, #yoga)", :class => "post_tag form-control" %>
+  <p class="btn btn-default add-image-btn">Add Image</p>
+  <p class="choose-file-btn"><%=f.file_field :image, :class => "post-image" %></p>
+	<%=f.submit 'Post', :class => "btn btn-default postBtn" %>
+<% end %>
+
+<script>
+	$(document).ready(function(){
+		$('.add-image-btn').click(function(){
+			$('.choose-file-btn').show();
+			$('.choose-vid-file').hide();
+		});
+	})
+</script>

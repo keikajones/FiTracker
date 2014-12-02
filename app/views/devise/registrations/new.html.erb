@@ -1,67 +1,47 @@
 <div class="sign-up-bkimg">
   <h2 class="heading signup-heading">Let's Get Started!</h2>
 </div>
-<div class="container-fluid sign-up-form"> 
+<div class="sign-up-wrapper">
+  <div class="sign-up-form"> 
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    
-    <div class="signup-view1">
-      <div class="field">
-        <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "form-control" %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      
+      <div class="signup-view1">
+        <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "form-control field" %>
+        <%= f.text_field :fname, placeholder: "First Name", class: "form-control field" %>
+        <%= f.text_field :lname, placeholder: "Last Name", class: "form-control field" %>
+        <div class="field"> 
+          <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "form-control" %>
+          <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+        </div>
+        <%= f.password_field :password_confirmation, placeholder: "Password confirmation", autocomplete: "off", class: "form-control field" %>
+
+        <span class="btn btn-default continueBtn">Continue</span>
+        <br><br>
+        <%- if controller_name != 'sessions' %>
+          <p><%= link_to "Sign In", new_session_path(resource_name), id: "signin-link" %></p>
+        <% end -%>
       </div>
-
-      <div class="field">
-        <%= f.text_field :fname, placeholder: "First Name", class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.text_field :lname, placeholder: "Last Name", class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "form-control" %>
-        <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-      </div>
-
-      <div class="field">
-        <%= f.password_field :password_confirmation, placeholder: "Password confirmation", autocomplete: "off", class: "form-control" %>
-      </div>
-
-      <span class="btn btn-default continueBtn">Continue</span>
-      <br>
-      <%- if controller_name != 'sessions' %>
-        <p><%= link_to "Sign In", new_session_path(resource_name), id: "signin-link" %></p>
-      <% end -%>
-    </div>
-    
-    <div class="signup-view2">
-      <div class="field">
-        <%= f.file_field :avatar %>
-      </div>
-
-      <div class="field">
-        <%= f.text_area :bio, placeholder: "Bio (optional)", class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.text_field :location, placeholder: "Location", class: "form-control" %>
-      </div>
-
-      <div class="actions">
+      
+      <div class="signup-view2">
+        <%= f.file_field :avatar, class: "avatar-field field" %>
+        <%= f.text_area :bio, placeholder: "Bio (optional)", class: "form-control field" %>
+        <%= f.text_field :location, placeholder: "Location", class: "form-control field" %>
         <%= f.submit "Next", class: "btn btn-default signinBtn" %>
-      </div><br>
+        <br>
 
-      <br>
-      <%- if controller_name != 'sessions' %>
-        <p><%= link_to "Sign In", new_session_path(resource_name), id: "signin-link" %></p>
-      <% end -%>
-    </div>
+        <br>
+        <%- if controller_name != 'sessions' %>
+          <p><%= link_to "Sign In", new_session_path(resource_name), id: "signin-link" %></p>
+        <% end -%>
+      </div>
 
-  <% end %>
+    <% end %>
 
+  </div>
 </div>
 
 

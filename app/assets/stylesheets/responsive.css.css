@@ -3,24 +3,45 @@
   PAGE - HOME
   *****************************************************/
   .user-index-wrapper .following-side-menu {
+    display: none; }
+
+  /****************************************************
+  PAGE - USER PUBLIC PROFILE
+  *****************************************************/
+  .user-following-side-menu {
+    display: none; }
+
+  /****************************************************
+  PAGE - USER GOALS
+  *****************************************************/
+  .goals-following-side-menu {
+    display: none; }
+
+  .add-goals .user-goals-form .goalsBtn {
+    display: block;
+    margin-top: 30px; }
+
+  /****************************************************
+  PAGE - EXPLORE
+  *****************************************************/
+  .interest-divs {
     display: none; } }
 @media (min-width: 768px) {
   /****************************************************
   PAGE - HOME
   *****************************************************/
-  body {
-    background-color: #8acdce; }
-
   .user-index-wrapper {
     width: 95%;
     margin: 0 auto; }
     .user-index-wrapper .following-side-menu {
-      margin: 0 2%;
+      margin: 0 2% 0 0;
       float: left;
       width: 26%;
+      height: 800px;
       max-width: 225px;
       background-color: #fff;
-      border-radius: 5px; }
+      border-radius: 5px;
+      border-right: 1px solid #eaebea; }
       .user-index-wrapper .following-side-menu .follow {
         padding: 0 10px; }
         .user-index-wrapper .following-side-menu .follow ul {
@@ -38,11 +59,174 @@
       float: left;
       width: 68%;
       max-width: 600px;
-      margin-right: 2%; } }
+      margin-left: 80px; }
+
+  /****************************************************
+  PAGE - USER PUBLIC PROFILE
+  *****************************************************/
+  .user_wrapper .user-following-side-menu {
+    margin: 0 2%;
+    float: left;
+    width: 26%;
+    max-width: 225px;
+    background-color: #fff;
+    border-radius: 5px; }
+    .user_wrapper .user-following-side-menu .follow {
+      padding: 0 10px; }
+      .user_wrapper .user-following-side-menu .follow ul {
+        list-style: none;
+        padding-left: 10px; }
+        .user_wrapper .user-following-side-menu .follow ul li {
+          display: inline-block;
+          margin: 5px; }
+          .user_wrapper .user-following-side-menu .follow ul li .follow-avatar {
+            max-width: 30px;
+            max-height: 30px; }
+    .user_wrapper .user-following-side-menu .follow-hr {
+      width: 95%; }
+  .user_wrapper .user-posts-section {
+    width: 70%;
+    border-left: 1px solid #eaebea;
+    float: left; }
+    .user_wrapper .user-posts-section .user_posts_list {
+      max-width: 500px; }
+
+  /****************************************************
+  PAGE - EDIT POSTS
+  *****************************************************/
+  .edit_user_posts {
+    max-width: 500px; }
+    .edit_user_posts .postBtn {
+      max-width: 500px; }
+
+  /****************************************************
+  PAGE - USER GOALS
+  *****************************************************/
+  .goals-following-side-menu {
+    margin: 0 2%;
+    float: left;
+    width: 26%;
+    max-width: 225px;
+    background-color: #fff;
+    border-radius: 5px; }
+    .goals-following-side-menu .follow {
+      padding: 0 10px; }
+      .goals-following-side-menu .follow ul {
+        list-style: none;
+        padding-left: 10px; }
+        .goals-following-side-menu .follow ul li {
+          display: inline-block;
+          margin: 5px; }
+          .goals-following-side-menu .follow ul li .follow-avatar {
+            max-width: 30px;
+            max-height: 30px; }
+    .goals-following-side-menu .follow-hr {
+      width: 95%; }
+
+  .user-goals {
+    width: 70%;
+    float: left;
+    border-left: 1px solid #eaebea;
+    border-right: 1px solid #eaebea; }
+
+  /****************************************************
+  PAGE - EXPLORE
+  *****************************************************/
+  #accordian {
+    display: none; }
+
+  .interest-section {
+    width: 100%;
+    margin: 0 auto; }
+    .interest-section .interest-divs {
+      width: 45%;
+      max-width: 500px;
+      height: 400px;
+      float: left;
+      border-radius: 5px;
+      border: 1px solid #eaebea;
+      margin: 1.5% 2.5%;
+      overflow-y: scroll; }
+      .interest-section .interest-divs h3 {
+        background-color: #ffd100;
+        color: #fff;
+        text-align: center;
+        font-family: "Raleway";
+        border-radius: 5px 5px 0 0;
+        padding: 5px 3px 3px;
+        margin: 0;
+        position: absolute;
+        width: 45%;
+        max-width: 500px; }
+      .interest-section .interest-divs .interest-post-feed {
+        margin-top: 50px; }
+        .interest-section .interest-divs .interest-post-feed .interest-post .post-image {
+          width: 90%;
+          margin: 10px 5% 0; } }
 @media (min-width: 992px) {
   /****************************************************
   PAGE - HOME
-  *****************************************************/ }
+  *****************************************************/
+  /****************************************************
+  PAGE - USER PUBLIC PROFILE
+  *****************************************************/
+  .user_wrapper .user-following-side-menu {
+    margin: 0 2%;
+    float: left;
+    width: 26%;
+    max-width: 225px;
+    background-color: #fff;
+    border-radius: 5px; }
+    .user_wrapper .user-following-side-menu .follow {
+      padding: 0 10px; }
+      .user_wrapper .user-following-side-menu .follow ul {
+        list-style: none;
+        padding-left: 10px; }
+        .user_wrapper .user-following-side-menu .follow ul li {
+          display: inline-block;
+          margin: 5px; }
+          .user_wrapper .user-following-side-menu .follow ul li .follow-avatar {
+            max-width: 30px;
+            max-height: 30px; }
+    .user_wrapper .user-following-side-menu .follow-hr {
+      width: 95%; }
+  .user_wrapper .user-posts-section {
+    width: 70%;
+    border-left: 1px solid #eaebea;
+    border-right: 1px solid #eaebea;
+    float: left; }
+    .user_wrapper .user-posts-section .user_posts_list {
+      max-width: 500px; }
+
+  /****************************************************
+  PAGE - USER GOALS
+  *****************************************************/
+  .goals-following-side-menu {
+    margin: 0 2%;
+    float: left;
+    width: 26%;
+    max-width: 225px;
+    background-color: #fff;
+    border-radius: 5px; }
+    .goals-following-side-menu .follow {
+      padding: 0 10px; }
+      .goals-following-side-menu .follow ul {
+        list-style: none;
+        padding-left: 10px; }
+        .goals-following-side-menu .follow ul li {
+          display: inline-block;
+          margin: 5px; }
+          .goals-following-side-menu .follow ul li .follow-avatar {
+            max-width: 30px;
+            max-height: 30px; }
+    .goals-following-side-menu .follow-hr {
+      width: 95%; }
+
+  .user-goals {
+    width: 70%;
+    float: left;
+    border-left: 1px solid #eaebea;
+    border-right: 1px solid #eaebea; } }
 @media (min-width: 1200px) {
   /****************************************************
   PAGE - HOME

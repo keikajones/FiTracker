@@ -13,12 +13,6 @@
 	<li class="user_post_image"><%= image_tag post.image.url, class: "post-image" %></li>
 <% end %>
 
-<% if post.video == "" %>
-	<div></div>
-<% else %>
-	<li class="user_post_video"><%= video_tag post.video, width: "100%" %></li>
-<% end %>
-
 <li class="edit_user_post">
 	<% if current_user and @user == current_user %>
 		<%= link_to 'Edit Post', edit_post_path(post) %> |

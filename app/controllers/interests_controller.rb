@@ -8,7 +8,7 @@ class InterestsController < ApplicationController
 	end
 
 	def create
-			
+
 	end
 
 	def edit

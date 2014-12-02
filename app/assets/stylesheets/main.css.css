@@ -66,7 +66,7 @@ hr {
       .explore-nav ul li a:hover {
         color: #94adcc; }
 
-.sign-in-form .signinBtn-links .actions .signinBtn, .sign-up-form .signinBtn-links .actions .signinBtn, .sign-up-form .signup-view1 .continueBtn, .sign-up-form .signup-view2 .continueBtn, .interests-wrapper .interests-form .interestsBtn, .goal-wrapper .goal-form .goalsBtn, .edit_user_posts .postBtn, .show-posts-wrapper .post-comment-btn, .add-goals .user-goals-form .goalsBtn, .edit_user_goals .goalsBtn {
+.sign-in-wrapper .sign-in-form .signinBtn, .sign-up-wrapper .sign-up-form .signup-view1 .continueBtn, .sign-up-wrapper .sign-up-form .signup-view2 .continueBtn, .sign-up-wrapper .sign-up-form .signup-view2 .signinBtn, .interests-wrapper .interests-form .interests-list .interestsBtn, .goal-wrapper .goal-form .goalsBtn, .user_wrapper .user-posts-section .user_posts .postBtn, .edit_user_posts .postBtn, .show-posts-wrapper .post-comment-btn, .add-goals .user-goals-form .goalsBtn, .edit_user_goals .goalsBtn {
   height: 30px;
   width: 100%;
   max-width: 400px;
@@ -75,7 +75,7 @@ hr {
   border: none;
   color: #485463; }
 
-.sign-in-form .signinBtn-links .actions .signinBtn:hover, .sign-up-form .signinBtn-links .actions .signinBtn:hover, .sign-up-form .signup-view1 .continueBtn:hover, .sign-up-form .signup-view2 .continueBtn:hover, .interests-wrapper .interests-form .interestsBtn:hover, .goal-wrapper .goal-form .goalsBtn:hover, .edit_user_posts .postBtn:hover, .show-posts-wrapper .post-comment-btn:hover, .add-goals .user-goals-form .goalsBtn:hover, .edit_user_goals .goalsBtn:hover {
+.sign-in-wrapper .sign-in-form .signinBtn:hover, .sign-up-wrapper .sign-up-form .signup-view1 .continueBtn:hover, .sign-up-wrapper .sign-up-form .signup-view2 .continueBtn:hover, .sign-up-wrapper .sign-up-form .signup-view2 .signinBtn:hover, .interests-wrapper .interests-form .interests-list .interestsBtn:hover, .goal-wrapper .goal-form .goalsBtn:hover, .user_wrapper .user-posts-section .user_posts .postBtn:hover, .edit_user_posts .postBtn:hover, .show-posts-wrapper .post-comment-btn:hover, .add-goals .user-goals-form .goalsBtn:hover, .edit_user_goals .goalsBtn:hover {
   color: white; }
 
 /****************************************************
@@ -118,7 +118,7 @@ PAGE - ROOT
     width: 180px;
     height: 50px;
     margin: 0 auto 15px;
-    background-color: #eaebea; }
+    background-color: #fff; }
 
 /****************************************************
 PAGE - SIGN IN
@@ -140,14 +140,17 @@ PAGE - SIGN IN
     .sign-in-bkimg .signin-title a:hover {
       color: #94adcc; }
 
-.sign-in-form, .sign-up-form {
-  width: 80%;
-  margin: 40px auto; }
-  .sign-in-form .field, .sign-up-form .field {
+.sign-in-wrapper {
+  width: 100%;
+  margin: 0 auto; }
+  .sign-in-wrapper .sign-in-form {
+    width: 90%;
     max-width: 400px;
-    margin: 0 auto 10px; }
-  .sign-in-form .signinBtn-links, .sign-up-form .signinBtn-links {
-    margin: 0 auto; }
+    margin: 40px auto; }
+    .sign-in-wrapper .sign-in-form .field {
+      margin: 0 auto 10px; }
+    .sign-in-wrapper .sign-in-form .signinBtn-links {
+      margin: 0 auto; }
 
 /****************************************************
 PAGE - SIGN UP
@@ -169,17 +172,26 @@ PAGE - SIGN UP
     font-size: 2.5em;
     text-align: left; }
 
-.sign-up-form {
-  margin-top: 0px; }
-  .sign-up-form .signup-view1, .sign-up-form .signup-view2 {
-    width: 100%;
-    margin: 40px auto 0; }
-    .sign-up-form .signup-view1 .continueBtn, .sign-up-form .signup-view2 .continueBtn {
-      margin: 10px 0; }
-  .sign-up-form .signup-view2 {
-    display: none; }
-    .sign-up-form .signup-view2 #user_bio {
-      height: 100px; }
+.sign-up-wrapper {
+  width: 100%;
+  margin: 0 auto; }
+  .sign-up-wrapper .sign-up-form {
+    width: 90%;
+    margin: 0 auto; }
+    .sign-up-wrapper .sign-up-form .signup-view1, .sign-up-wrapper .sign-up-form .signup-view2 {
+      width: 100%;
+      max-width: 400px;
+      margin: 40px auto 0; }
+      .sign-up-wrapper .sign-up-form .signup-view1 .field, .sign-up-wrapper .sign-up-form .signup-view2 .field {
+        margin: 0 auto 10px; }
+      .sign-up-wrapper .sign-up-form .signup-view1 .continueBtn, .sign-up-wrapper .sign-up-form .signup-view2 .continueBtn {
+        margin: 10px auto 0; }
+    .sign-up-wrapper .sign-up-form .signup-view2 {
+      display: none; }
+      .sign-up-wrapper .sign-up-form .signup-view2 .avatar-field {
+        margin: 0 0 10px; }
+      .sign-up-wrapper .sign-up-form .signup-view2 #user_bio {
+        height: 100px; }
 
 #signin-link {
   width: 100%;
@@ -204,7 +216,7 @@ PAGE - INTERESTS FORM
     top: 255px; }
     .interests-bkimg .interests-copy-wrapper .interests-copy {
       padding: 3px 15px;
-      color: white;
+      color: #485463;
       font-family: "Raleway";
       font-size: 1.5em;
       text-align: left; }
@@ -215,6 +227,7 @@ PAGE - INTERESTS FORM
   width: 100%; }
   .interests-wrapper .interests-form {
     width: 95%;
+    max-width: 500px;
     margin: 0 auto; }
     .interests-wrapper .interests-form .interests-list {
       list-style: none;
@@ -269,28 +282,50 @@ PAGE - NEW GOAL
 /****************************************************
 PAGE - USER PUBLIC PROFILE
 *****************************************************/
+.user_wrapper .user-posts-section .user-nav, .user-goals .user-nav {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-bottom: 1px solid #eaebea; }
+  .user_wrapper .user-posts-section .user-nav ul, .user-goals .user-nav ul {
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    margin: 0 auto; }
+    .user_wrapper .user-posts-section .user-nav ul li, .user-goals .user-nav ul li {
+      display: inline-block;
+      width: 50%;
+      text-align: center;
+      padding: 5px 0; }
+      .user_wrapper .user-posts-section .user-nav ul li a, .user-goals .user-nav ul li a {
+        color: #485463; }
+    .user_wrapper .user-posts-section .user-nav ul .active, .user-goals .user-nav ul .active {
+      background-color: #ffd100; }
+      .user_wrapper .user-posts-section .user-nav ul .active a, .user-goals .user-nav ul .active a {
+        color: #485463; }
+
 .user_wrapper {
   width: 100%;
   margin: 0 auto;
   padding: 0; }
   .user_wrapper .bio-wrapper {
     width: 100%;
-    background-color: #485463;
+    background-color: #eaebea;
     margin: 0;
     padding: 0;
-    color: white; }
+    color: #485463; }
     .user_wrapper .bio-wrapper .profile-bio {
       width: 90%;
       margin: 0 auto;
       padding: 20px 0 10px; }
       .user_wrapper .bio-wrapper .profile-bio .profile-pic .profile-image {
         float: left;
-        width: 30%;
+        width: 120px;
         border: 4px solid #fff;
         border-radius: 5px; }
       .user_wrapper .bio-wrapper .profile-bio .user-info {
         float: left;
-        width: 60%;
+        width: 50%;
         margin-left: 15px; }
         .user_wrapper .bio-wrapper .profile-bio .user-info .user_name {
           margin: 0 0 5px;
@@ -300,28 +335,9 @@ PAGE - USER PUBLIC PROFILE
       margin: 0 auto;
       padding-bottom: 10px;
       font-size: 0.95em; }
-  .user_wrapper .user-nav {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #eaebea; }
-    .user_wrapper .user-nav ul {
-      list-style: none;
-      padding-left: 0;
-      width: 100%;
-      margin: 0 auto; }
-      .user_wrapper .user-nav ul li {
-        display: inline-block;
-        width: 49.6%;
-        text-align: center;
-        padding: 5px 0; }
-        .user_wrapper .user-nav ul li a {
-          color: #485463; }
-      .user_wrapper .user-nav ul .active {
-        background-color: #ffd100; }
-        .user_wrapper .user-nav ul .active a {
-          color: #485463; }
   .user_wrapper .user-posts-section .user_posts {
     width: 90%;
+    max-width: 500px;
     margin: 20px auto; }
     .user_wrapper .user-posts-section .user_posts .post_body {
       width: 100%;
@@ -337,7 +353,7 @@ PAGE - USER PUBLIC PROFILE
       margin-bottom: 5px;
       border-radius: 0 0 5px 5px;
       border-top: none; }
-    .user_wrapper .user-posts-section .user_posts .add-image-btn, .user_wrapper .user-posts-section .user_posts .add-video-btn {
+    .user_wrapper .user-posts-section .user_posts .add-image-btn, .user_wrapper .user-posts-section .user_posts .edit_user_posts .add-video-btn, .edit_user_posts .user_wrapper .user-posts-section .user_posts .add-video-btn {
       height: 20px;
       font-size: 0.8em;
       padding: 2px 4px;
@@ -348,24 +364,16 @@ PAGE - USER PUBLIC PROFILE
       .user_wrapper .user-posts-section .user_posts .choose-file-btn .post-avatar {
         display: inline-block;
         margin-top: 4px; }
-    .user_wrapper .user-posts-section .user_posts .choose-vid-file {
-      display: none; }
-      .user_wrapper .user-posts-section .user_posts .choose-vid-file .embed-video {
-        display: block;
-        font-size: 0.8em;
-        margin-top: 5px;
-        width: 300px;
-        height: 20px;
-        border-radius: 3px;
-        border: 1px solid #bbb; }
     .user_wrapper .user-posts-section .user_posts .postBtn {
-      display: block;
-      width: 70px;
-      height: 25px;
-      padding-top: 3px; }
+      max-width: 500px; }
+  .user_wrapper .user-posts-section .post-form-divider {
+    width: 500px; }
   .user_wrapper .user-posts-section .user_posts_list {
     list-style: none;
-    width: 90%; }
+    width: 85%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-left: 0; }
     .user_wrapper .user-posts-section .user_posts_list .post-user-avatar {
       display: inline-block;
       max-width: 50px;
@@ -387,6 +395,8 @@ PAGE - USER PUBLIC PROFILE
     .user_wrapper .user-posts-section .user_posts_list .edit_user_post {
       text-align: right;
       margin-top: 10px; }
+  .user_wrapper .user-goals-section {
+    display: none; }
 
 /****************************************************
 PAGE - EDIT USER POSTS 
@@ -414,7 +424,7 @@ PAGE - EDIT USER POSTS
     margin-bottom: 5px;
     border-radius: 0 0 5px 5px;
     border-top: none; }
-  .edit_user_posts .add-image-btn, .edit_user_posts .user_wrapper .user-posts-section .user_posts .add-video-btn, .user_wrapper .user-posts-section .user_posts .edit_user_posts .add-video-btn, .edit_user_posts .add-video-btn {
+  .edit_user_posts .add-image-btn, .edit_user_posts .add-video-btn {
     height: 20px;
     font-size: 0.8em;
     padding: 2px 4px;
@@ -498,12 +508,13 @@ PAGE - SHOW POSTS
 PAGE - USER GOALS
 *****************************************************/
 .user-goals {
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 20px; }
+  width: 100%;
+  margin: 0 auto; }
   .user-goals .user-goals-list {
     list-style: none;
-    padding-left: 0; }
+    padding-left: 0;
+    width: 90%;
+    margin: 20px auto 0; }
     .user-goals .user-goals-list .goal-body {
       font-size: 1.35em; }
     .user-goals .user-goals-list .edit-goal-link {
@@ -590,15 +601,13 @@ PAGE - HOME
 
 .user-index-wrapper {
   width: 100%;
-  margin: 0 auto;
-  background-color: #485463; }
+  margin: 10px auto 0; }
   .user-index-wrapper .user-feed {
     width: 95%;
     max-width: 530px;
     margin: 0 auto;
     background-color: #fff;
-    padding: 10px;
-    border-radius: 5px; }
+    padding: 10px; }
     .user-index-wrapper .user-feed .post-user-avatar {
       display: inline-block;
       max-width: 50px;
@@ -622,17 +631,22 @@ PAGE - HOME
 PAGE - EXPLORE (INTERESTS)
 *****************************************************/
 .explore-container {
-  background-color: #485463;
+  background-color: #fff;
   height: 800px; }
 
 .explore-title {
   font-size: 2em;
-  padding-top: 5px;
+  padding: 5px 0 15px;
   margin: 0; }
+
+.explore-copy {
+  text-align: center;
+  color: #485463;
+  font-family: "Raleway"; }
 
 .user-interests {
   width: 95%;
-  margin: 40px auto 0; }
+  margin: 15px auto 0; }
   .user-interests .user-interests-list {
     list-style: none;
     padding-left: 0; }
@@ -641,9 +655,9 @@ PAGE - EXPLORE (INTERESTS)
       margin-bottom: 20px; }
 
 #accordian {
-  background: #485463;
   width: 100%;
   color: #eaebea;
+  margin-top: 30px;
   /*Some cool shadow and glow effect*/ }
 
 /*heading styles*/
@@ -693,7 +707,8 @@ PAGE - EXPLORE (INTERESTS)
   list-style: none;
   padding-left: 0; }
   .interest-post-feed .interest-post {
-    width: 100%; }
+    width: 100%;
+    max-width: 500px; }
     .interest-post-feed .interest-post .post-user-avatar {
       max-height: 50px;
       max-width: 50px;
@@ -705,8 +720,10 @@ PAGE - EXPLORE (INTERESTS)
       font-size: 0.8em;
       line-height: 0.7; }
     .interest-post-feed .interest-post .user_post_body {
-      margin: 10px 0 0px 20px; }
+      width: 90%;
+      margin: 10px auto 0; }
     .interest-post-feed .interest-post .user_post_tag {
       margin: 10px 0 0px 20px; }
     .interest-post-feed .interest-post .post-image {
-      width: 100%; }
+      width: 100%;
+      margin: 0 auto; }
