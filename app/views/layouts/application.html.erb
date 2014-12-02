@@ -17,6 +17,10 @@
 <body>
 
 <% if current_user %>
+	<p class="current-username"><%= link_to current_user.fname + " " + current_user.lname, current_user %></p>
+<% end %>
+
+<% if current_user %>
 	<a href="#"><i class="fa fa-bars fa-2x menu-bars sb-toggle-left"></i></a>
 
 	<div class="sb-slidebar sb-left">

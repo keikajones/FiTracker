@@ -29,21 +29,11 @@ $quaternary-background-color: #EAEBEA;
 		display: none;	
 	}
 
-
 	/****************************************************
 	PAGE - USER GOALS
 	*****************************************************/
 	.goals-following-side-menu{
 		display: none;
-	}
-	
-	.add-goals{
-		.user-goals-form{
-			.goalsBtn{
-				display: block;
-				margin-top: 30px;
-			}
-		}
 	}
 
 	/****************************************************
@@ -51,6 +41,10 @@ $quaternary-background-color: #EAEBEA;
 	*****************************************************/
 
 	.interest-divs{
+		display: none;
+	}
+
+	.explore-following-side-menu{
 		display: none;
 	}
 
@@ -66,7 +60,7 @@ $quaternary-background-color: #EAEBEA;
 		width: 95%;
 		margin: 0 auto;
 		.following-side-menu{
-			margin: 0 2% 0 0;
+			margin: 20px 2% 0 0;
 			float: left;
 			width: 26%;
 			height: 800px;
@@ -95,9 +89,9 @@ $quaternary-background-color: #EAEBEA;
 		}
 		.user-feed{
 			float: left;
-			width: 68%;
+			width: 60%;
 			max-width: 600px;
-			margin-left: 80px;
+			margin-left: 8%;
 		}
 	}
 
@@ -120,6 +114,7 @@ $quaternary-background-color: #EAEBEA;
 			background-color: #fff;
 			border-radius: 5px;
 			.follow{
+				margin-top: 20px;
 				padding: 0 10px;
 				ul{
 					list-style: none;
@@ -143,6 +138,14 @@ $quaternary-background-color: #EAEBEA;
 			border-left: 1px solid $quaternary-background-color;
 			float: left;
 			.user-nav{
+				ul{
+					li{
+						width: 50%;
+					}
+					.mobile-only{
+						display: none;
+					}
+				}
 			}
 			.user_posts{
 			}
@@ -166,16 +169,13 @@ $quaternary-background-color: #EAEBEA;
 	
 
 	/****************************************************
-	PAGE - EDIT POSTS
+	PAGE - SHOW POSTS
 	*****************************************************/
 
-	.edit_user_posts{
-		max-width: 500px;
-		.postBtn{
-			max-width: 500px;
-		}
+	.show-posts-wrapper{
+		max-width: 400px;
+		margin-top: 40px;
 	}
-
 
 	/****************************************************
 	PAGE - USER GOALS
@@ -189,6 +189,7 @@ $quaternary-background-color: #EAEBEA;
 		background-color: #fff;
 		border-radius: 5px;
 		.follow{
+			margin-top: 20px;
 			padding: 0 10px;
 			ul{
 				list-style: none;
@@ -213,6 +214,16 @@ $quaternary-background-color: #EAEBEA;
 		float: left;
 		border-left: 1px solid $quaternary-background-color;
 		border-right: 1px solid $quaternary-background-color;
+		.user-nav{
+			ul{
+				li{
+					width: 50%;
+				}
+				.mobile-only{
+					display: none;
+				}
+			}
+		}
 		.user-goals-list{
 			li{
 			}
@@ -226,22 +237,57 @@ $quaternary-background-color: #EAEBEA;
 			.edit-goal-link{
 			}
 		}
+		.add-goals{
+			.user-goals-form{
+				.goalsBtn{
+					display: block;
+				}
+			}
+		}
 	}
 
 
 	/****************************************************
 	PAGE - EXPLORE
 	*****************************************************/
+	
+	.explore-following-side-menu{
+		margin: 0 2%;
+		float: left;
+		width: 20%;
+		max-width: 225px;
+		background-color: #fff;
+		border-radius: 5px;
+		.follow{
+			padding: 0 10px;
+			ul{
+				list-style: none;
+				padding-left: 10px;
+				li{
+					display: inline-block;
+					margin: 5px;
+					.follow-avatar{
+						max-width: 30px;
+						max-height: 30px;
+					}
+				}
+			}
+		}
+		.follow-hr{
+			width: 95%;
+		}
+	}
 
 	#accordian{
 		display: none;
 	}
 
 	.interest-section{
-		width: 100%;
+		width: 75%;
 		margin: 0 auto;
+		float: left;
 		.interest-divs{
-			width: 45%;
+			width: 43%;
 			max-width: 500px;
 			height: 400px;
 			float: left;
@@ -258,7 +304,7 @@ $quaternary-background-color: #EAEBEA;
 				padding: 5px 3px 3px;
 				margin: 0;
 				position: absolute;
-				width: 45%;
+				width: 32.1%;
 				max-width: 500px;
 			}
 			.interest-post-feed{ //ul//

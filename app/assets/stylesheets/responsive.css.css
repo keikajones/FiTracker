@@ -17,14 +17,13 @@
   .goals-following-side-menu {
     display: none; }
 
-  .add-goals .user-goals-form .goalsBtn {
-    display: block;
-    margin-top: 30px; }
-
   /****************************************************
   PAGE - EXPLORE
   *****************************************************/
   .interest-divs {
+    display: none; }
+
+  .explore-following-side-menu {
     display: none; } }
 @media (min-width: 768px) {
   /****************************************************
@@ -34,7 +33,7 @@
     width: 95%;
     margin: 0 auto; }
     .user-index-wrapper .following-side-menu {
-      margin: 0 2% 0 0;
+      margin: 20px 2% 0 0;
       float: left;
       width: 26%;
       height: 800px;
@@ -57,9 +56,9 @@
         width: 95%; }
     .user-index-wrapper .user-feed {
       float: left;
-      width: 68%;
+      width: 60%;
       max-width: 600px;
-      margin-left: 80px; }
+      margin-left: 8%; }
 
   /****************************************************
   PAGE - USER PUBLIC PROFILE
@@ -72,6 +71,7 @@
     background-color: #fff;
     border-radius: 5px; }
     .user_wrapper .user-following-side-menu .follow {
+      margin-top: 20px;
       padding: 0 10px; }
       .user_wrapper .user-following-side-menu .follow ul {
         list-style: none;
@@ -88,16 +88,19 @@
     width: 70%;
     border-left: 1px solid #eaebea;
     float: left; }
+    .user_wrapper .user-posts-section .user-nav ul li {
+      width: 50%; }
+    .user_wrapper .user-posts-section .user-nav ul .mobile-only {
+      display: none; }
     .user_wrapper .user-posts-section .user_posts_list {
       max-width: 500px; }
 
   /****************************************************
-  PAGE - EDIT POSTS
+  PAGE - SHOW POSTS
   *****************************************************/
-  .edit_user_posts {
-    max-width: 500px; }
-    .edit_user_posts .postBtn {
-      max-width: 500px; }
+  .show-posts-wrapper {
+    max-width: 400px;
+    margin-top: 40px; }
 
   /****************************************************
   PAGE - USER GOALS
@@ -110,6 +113,7 @@
     background-color: #fff;
     border-radius: 5px; }
     .goals-following-side-menu .follow {
+      margin-top: 20px;
       padding: 0 10px; }
       .goals-following-side-menu .follow ul {
         list-style: none;
@@ -128,18 +132,46 @@
     float: left;
     border-left: 1px solid #eaebea;
     border-right: 1px solid #eaebea; }
+    .user-goals .user-nav ul li {
+      width: 50%; }
+    .user-goals .user-nav ul .mobile-only {
+      display: none; }
+    .user-goals .add-goals .user-goals-form .goalsBtn {
+      display: block; }
 
   /****************************************************
   PAGE - EXPLORE
   *****************************************************/
+  .explore-following-side-menu {
+    margin: 0 2%;
+    float: left;
+    width: 20%;
+    max-width: 225px;
+    background-color: #fff;
+    border-radius: 5px; }
+    .explore-following-side-menu .follow {
+      padding: 0 10px; }
+      .explore-following-side-menu .follow ul {
+        list-style: none;
+        padding-left: 10px; }
+        .explore-following-side-menu .follow ul li {
+          display: inline-block;
+          margin: 5px; }
+          .explore-following-side-menu .follow ul li .follow-avatar {
+            max-width: 30px;
+            max-height: 30px; }
+    .explore-following-side-menu .follow-hr {
+      width: 95%; }
+
   #accordian {
     display: none; }
 
   .interest-section {
-    width: 100%;
-    margin: 0 auto; }
+    width: 75%;
+    margin: 0 auto;
+    float: left; }
     .interest-section .interest-divs {
-      width: 45%;
+      width: 43%;
       max-width: 500px;
       height: 400px;
       float: left;
@@ -156,7 +188,7 @@
         padding: 5px 3px 3px;
         margin: 0;
         position: absolute;
-        width: 45%;
+        width: 32.1%;
         max-width: 500px; }
       .interest-section .interest-divs .interest-post-feed {
         margin-top: 50px; }

@@ -31,7 +31,7 @@ body{
 .title{
 	text-align: center;
 	font-size: 2em;
-	padding: 5px 0;
+	padding: 4px 0;
 	margin: 0;
 	font-family: 'Montserrat Subrayada', sans-serif;
 	background-color: $primary-background-color;
@@ -67,6 +67,20 @@ hr{
 
 .menu-bars:hover{
 	color: $secondary-color;
+}
+
+.current-username{
+	position: absolute;
+	margin: 0;
+	padding: 10px 10px;
+	font-size: 1.25em;
+	font-family: $secondary-font-family;
+	a{
+		color: #fff;
+	}
+	a:hover{
+		color: $secondary-color;
+	}
 }
 
 .explore-nav{
@@ -128,7 +142,7 @@ PAGE - ROOT
 .main-title{
 	text-align: center;
 	font-size: 3em;
-	margin-top: 100px;
+	margin-top: 150px;
 	font-family: 'Montserrat Subrayada', sans-serif;
 	color: $tertiary-color;
 	#fit{
@@ -138,7 +152,7 @@ PAGE - ROOT
 
 #intro-copy{
 	font-family: $font-family;
-	width: 290px;
+	width: 340px;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -147,7 +161,7 @@ PAGE - ROOT
 	width: 300px;
 	height: 300px;
 	margin: 0 auto;
-	padding-top: 100px;
+	padding-top: 70px;
 	.btn, .btn-default{
 		display: block;
 		width: 180px;
@@ -267,6 +281,27 @@ PAGE - SIGN UP
 }
 
 
+/****************************************************
+PAGE - EDIT USER
+*****************************************************/
+
+.edit-user-form{
+	width: 90%;
+	max-width: 400px;
+	margin: 0 auto 20px;
+	.field{
+		margin-bottom: 10px;
+	}
+	.signinBtn{
+		@extend %buttons;
+	}
+	.cancelBtn{
+		@extend %buttons;
+		border-radius: 5px;
+		background-color: #C92C0C;
+		color: #fff;
+	}
+}
 
 /****************************************************
 PAGE - INTERESTS FORM
@@ -394,9 +429,10 @@ PAGE - USER PUBLIC PROFILE
 		margin: 0 auto;
 		li{
 			display: inline-block;
-			width: 50%;
+			width: 33.3333%;
 			text-align: center;
 			padding: 5px 0;
+			border-left: 1px solid $quaternary-background-color;
 			a{
 				color: $primary-background-color;
 			}
@@ -547,6 +583,7 @@ PAGE - EDIT USER POSTS
 
 .edit_user_posts{
 	width: 90%;
+	max-width: 400px;
 	margin: 0 auto;
 	margin-top: 20px;
 	.edit-post-header{
@@ -614,7 +651,8 @@ PAGE - SHOW POSTS
 
 .show-posts-wrapper{
 	width: 90%;
-	margin: 20px auto 0;
+	max-width: 400px;
+	margin: 40px auto 0;
 	.post-user-avatar{
 		display: inline-block;
 		max-width: 80px;
@@ -736,11 +774,12 @@ PAGE - USER GOALS
 		width: 100px;
 		height: 35px;
 		margin-left: 10px;
-		vertical-align: 5px;
+		vertical-align: 2px;
 	}
 	.user-goals-form{
 		display: none;
 		width: 100%;
+		max-width: 500px;
 		margin: 0 auto;
 		.goal-body-input{
 
@@ -759,6 +798,7 @@ PAGE - USER GOALS
 		.goalsBtn{
 			@extend %buttons;
 			margin-top: 10px;
+			max-width: 500px;
 		}
 	}
 }
@@ -789,6 +829,7 @@ PAGE - EDIT USER GOALS
 
 .edit_user_goals{
 	width: 90%;
+	max-width: 400px;
 	margin: 0 auto;
 	margin-top: 20px;
 	.edit-goal-header{
@@ -823,24 +864,44 @@ PAGE - EDIT USER GOALS
 }
 
 /****************************************************
+PAGE - USER FOLLOWS
+*****************************************************/
+
+.follows{
+	.user-nav{
+		@extend %user-nav;
+	}
+	.follow{
+		padding: 0 10px;
+		ul{
+			list-style: none;
+			padding-left: 10px;
+			li{
+				display: inline-block;
+				margin: 5px;
+				.follow-avatar{
+					max-width: 30px;
+					max-height: 30px;
+				}
+			}
+		}
+	}
+	.follow-hr{
+		width: 95%;
+	}
+}
+
+
+/****************************************************
 PAGE - HOME
 *****************************************************/
 
-.user-show-title{
-	font-size: 2em;
-	padding-top: 5px;
-	padding-bottom: 15px;
-	margin: 0;
-	background-color: $primary-background-color;
-}
-
 .user-index-wrapper{
 	width: 100%;
-	margin: 10px auto 0;
 	.user-feed{
 		width: 95%;
 		max-width: 530px;
-		margin: 0 auto;
+		margin: 20px auto 0;
 		background-color: #fff;
 		padding: 10px;
 		.post-user-avatar{
@@ -868,6 +929,10 @@ PAGE - HOME
 		.post-image{
 			width: 100%;
 		}
+		.comment{
+			text-align: right;
+			font-size: 0.9em;
+		}
 	}
 }
 
@@ -878,12 +943,6 @@ PAGE - EXPLORE (INTERESTS)
 .explore-container{
 	background-color: #fff;
 	height: 800px;
-}
-
-.explore-title{
-	font-size: 2em;
-	padding: 5px 0 15px;
-	margin: 0;
 }
 
 .explore-copy{

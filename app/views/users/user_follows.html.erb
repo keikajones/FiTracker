@@ -20,19 +20,15 @@
 		</div>
 	</div>
 
-	<div class="goals-following-side-menu">
-		<%= render 'follow' %>
-	</div>
-
-	<div class="row user-goals">
+	<div class="follows">
 		<nav class="user-nav">
 			<ul>
-				<li class="active" id="nav-goals"><%= link_to "My Goals", user_goals_user_path(@user) %></li><!--
+				<li id="nav-goals"><%= link_to "My Goals", user_goals_user_path(@user) %></li><!--
 				--><li id="nav-posts"><%= link_to "Post Feed", @user %></li><!--
-				--><li class="mobile-only"><%= link_to "Follows", user_follows_user_path(@user) %></li>
+				--><li class="mobile-only active"><%= link_to "Follows", user_follows_user_path(@user) %></li>
 			</ul>
 		</nav>
-		<%= render 'goal' %>
+		<%= render 'follow' %>
 	</div>
 	
 </div>

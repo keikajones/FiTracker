@@ -32,7 +32,8 @@
 			<nav class="user-nav">
 				<ul>
 					<li id="nav-goals"><%= link_to "My Goals", user_goals_user_path(@user) %></li><!--
-					--><li class="active" id="nav-posts"><%= link_to "Post Feed", @user %></li>
+					--><li class="active" id="nav-posts"><%= link_to "Post Feed", @user %></li><!--
+					--><li class="mobile-only"><%= link_to "Follows", user_follows_user_path(@user) %></li>
 				</ul>
 			</nav>
 			<div class="row user_posts">

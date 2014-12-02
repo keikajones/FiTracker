@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     member do
       post 'follow'
       post 'unfollow'
-      get 'user_interests'
       get 'user_goals'
+      get 'user_follows'
     end
   end
 

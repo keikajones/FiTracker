@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_user, only: [:show, :user_goals, :edit, :update, :follow, :unfollow]
+	before_action :set_user, only: [:show, :user_goals, :user_follows, :edit, :update, :follow, :unfollow]
 
   def follow
     @rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
@@ -38,6 +38,10 @@ class UsersController < ApplicationController
 
   def user_goals
     @goal = Goal.new
+  end
+
+  def user_follows
+    
   end
 
   def new

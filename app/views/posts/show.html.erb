@@ -15,12 +15,6 @@
 		<li class="user_post_image"><%= image_tag @post.image.url, class: "post-image" %></li>
 	<% end %>
 
-	<% if @post.video == "" %>
-		<div></div>
-	<% else %>
-		<li class="user_post_video"><%= video_tag @post.video, width: "100%" %></li>
-	<% end %>
-
 	<li class="edit_user_post">
 		<% if current_user and @user == current_user %>
 			<%= link_to 'Edit Post', edit_post_path(@post) %>
@@ -35,7 +29,7 @@
 					<p class="comment-author"><%= link_to comment.user.fname + " " + comment.user.lname, user_path(comment.user) %></p>
 					<p class="comment-created"><%= comment.created_at.strftime("%B %d") %> at <%= comment.created_at.strftime("%l:%m %p") %></p>
 				</div>
-				<li class="comment-body"><%= comment.body %></li> 
+				<li class="comment-body"><%= comment.body %></li><br>
 				<li class="edit_user_comment"> 
 					<% if current_user and comment.user == current_user %>
 						<%= link_to 'Edit Comment', edit_post_comment_path(@post, comment) %> | <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } %> 

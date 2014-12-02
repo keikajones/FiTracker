@@ -36,6 +36,8 @@
 				<% else %>
 					<div class="user_post_image"><%= image_tag post.image.url, class: "post-image" %></div>
 				<% end %>
+				<br>
+				<p class="comment"><%= link_to 'Comment', post_path(post) %></p>
 				<hr>
 			<% end %>
 		<% end %>
