@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :user_goals, :user_follows, :follow, :unfollow]
 
   def follow
-    @rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
-    if @rel.save
+    @relationship = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
+    if @relationship.save
       flash[:notice] = "Followed!"
       redirect_to @user
     else
@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   end
 
   def unfollow
-    @rel = Relationship.where(follower_id: current_user.id, followed_id: @user.id).first
-    if @rel and @rel.destroy
+    @relationship = Relationship.where(follower_id: current_user.id, followed_id: @user.id).first
+    if @relationship and @relationship.destroy
       flash[:notice] = "Unfollowed!"
       redirect_to @user
     else
@@ -25,8 +25,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
-    @posts = Post.all
+    @users = User.first(20)
+    @posts = Post.first(20)
     @posts = Post.order('created_at ASC')
   end
 

@@ -7,9 +7,8 @@ class HomeController < ApplicationController
 	end
 
 	def explore
-		# @users = User.first(20)
-		@users = User.all
-		@posts = Post.all
+		@users = User.first(20)
+		@posts = Post.first(20)
 	end
 
 end

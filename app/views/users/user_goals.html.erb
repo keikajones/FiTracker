@@ -1,23 +1,7 @@
 <h1 class="title"><a href="/"><span id="fit">FIT</span>racker</a></h1>
 <div class="user_wrapper">
 	<div class="bio-wrapper">
-		<div class="row profile-bio">
-			<div class="profile-pic"><%= image_tag @user.avatar.url(:thumb), class: "profile-image" %></div>
-			<div class="user-info">	
-				<h1 class="user_name"><%= @user.fname + " " + @user.lname %></h1>
-				<p class="location"><%= @user.location %></p>
-				<% if current_user and @user != current_user %>
-					<% if current_user.followeds.include? @user %>
-						<p><%= link_to 'Unfollow', unfollow_user_path(@user), method: :post %></p>
-					<% else %>
-						<p><%= link_to 'Follow', follow_user_path(@user),method: :post %></p>
-					<% end %>
-				<% end %>
-			</div>
-		</div>
-		<div class="row user-bio">
-			<p><%= @user.bio %></p>
-		</div>
+		<%= render 'bio' %>
 	</div>
 
 	<div class="goals-following-side-menu">
@@ -29,20 +13,10 @@
 			<ul>
 				<li class="active" id="nav-goals"><%= link_to "My Goals", user_goals_user_path(@user) %></li><!--
 				--><li id="nav-posts"><%= link_to "Post Feed", @user %></li><!--
-				--><li class="mobile-only"><%= link_to "Follows", user_follows_user_path(@user) %></li>
+				--><li class="mobile-only"><%= link_to "Follows", user_follows_user_path(@user) %></likj>
 			</ul>
 		</nav>
 		<%= render 'goal' %>
 	</div>
 	
 </div>
-
-<script>
-
-$(document).ready(function(){
-	$('.add-goal-btn').click(function(){
-		$('.user-goals-form').show();
-	});
-});
-
-</script>

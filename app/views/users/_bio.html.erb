@@ -1,0 +1,20 @@
+<div class="row profile-bio">
+	<div class="profile-pic"><%= image_tag @user.avatar.url(:thumb), class: "profile-image" %></div>
+	<div class="user-info">	
+		<h1 class="user_name"><%= @user.fname + " " + @user.lname %></h1>
+		<p class="location"><%= @user.location %></p>
+		<% if current_user and @user != current_user %>
+			<% if current_user.followeds.include? @user %>
+				<p><%= link_to 'Unfollow', unfollow_user_path(@user), method: :post %></p>
+			<% else %>
+				<p><%= link_to 'Follow', follow_user_path(@user),method: :post %></p>
+			<% end %>
+		<% end %>
+		<% if current_user and @user == current_user %>
+			<p><%= link_to 'Edit Profile', edit_user_registration_path %></p>
+		<% end %>
+	</div>
+</div>
+<div class="row user-bio">
+	<p><%= @user.bio %></p>
+</div>
