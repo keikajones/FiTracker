@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.origin'] || stored_location_for(resource) || users_path
   end
 
+
   protected
 
   def configure_devise_permitted_parameters
@@ -22,6 +23,7 @@ class ApplicationController < ActionController::Base
         |u| u.permit(registration_params) 
       }
     end
+    
   end
 
 end

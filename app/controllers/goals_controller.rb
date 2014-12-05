@@ -43,7 +43,9 @@ class GoalsController < ApplicationController
 		redirect_to user_goals_user_path(current_user)
 	end
 
+	
 	private
+
 	def goal_params
 		params.require(:goal).permit(:body, :timeline).merge(user_id: current_user.id)
 	end

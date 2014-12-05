@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_user, only: [:show, :user_goals, :user_follows, :edit, :update, :follow, :unfollow]
+	before_action :set_user, only: [:show, :user_goals, :user_follows, :follow, :unfollow]
 
   def follow
     @rel = Relationship.new(follower_id: current_user.id, followed_id: @user.id)
@@ -41,7 +41,6 @@ class UsersController < ApplicationController
   end
 
   def user_follows
-    
   end
 
   def new
@@ -50,28 +49,14 @@ class UsersController < ApplicationController
     @comment = Comment.new
   end
 
-  def edit
-
-  end
-
-  def create
-    
-  end
-
-  def update
-    
-  end
-
   def interests
-      #get the interests
-      @interests = Interest.find(params[:interests])
-      #loop through and create a new user_interest for each
-      @interests.each do |interest|
-        UserInterest.create(user_id: current_user.id, interest_id: interest.id)
-      end
-
-      redirect_to new_goal_path
+    @interests = Interest.find(params[:interests])
+    @interests.each do |interest|
+      UserInterest.create(user_id: current_user.id, interest_id: interest.id)
+    end
+    redirect_to new_goal_path
   end
+
 
   private
 

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>FITracker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -27,10 +27,10 @@
 		<nav class="explore-nav">
 			<ul>
 				<% if current_user %>
-					<li><%= link_to "Home", users_path %></li>
-					<li><%= link_to "Profile", current_user %></li>
-					<li><%= link_to "Explore", explore_path %></li>
-					<li></i><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+					<li><%= link_to "Home", users_path, 'data-no-turbolink' => true %></li>
+					<li><%= link_to "Profile", current_user, 'data-no-turbolink' => true %></li>
+					<li><%= link_to "Explore", explore_path, 'data-no-turbolink' => true %></li>
+					<li></i><%= link_to "Logout", destroy_user_session_path, method: :delete, 'data-no-turbolink' => true %></li>
 				<% end %>
 			</ul>
 		</nav>

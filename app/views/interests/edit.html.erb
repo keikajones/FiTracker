@@ -1,39 +1,14 @@
-<div class="user_wrapper">
-	<div class="bio-wrapper">
-		<div class="row profile-bio">
-			<div class="profile-pic"><%= image_tag @user.avatar.url(:thumb), class: "profile-image" %></div>
-			<div class="user-info">	
-				<h1 class="user_name"><%= @user.fname + " " + @user.lname %></h1>
-				<p class="location"><%= @user.location %></p>
-				<% if current_user and @user != current_user %>
-					<% if current_user.followeds.include? @user %>
-						<p><%= link_to 'Unfollow', unfollow_user_path(@user), method: :post %></p>
-					<% else %>
-						<p><%= link_to 'Follow', follow_user_path(@user),method: :post %></p>
-					<% end %>
-				<% end %>
-			</div>
-		</div>
-		<div class="row user-bio">
-			<p><%= @user.bio %></p>
-		</div>
-	</div>
-
-	<nav class="user-nav">
-		<ul>
-			<li id="nav-posts"><%= link_to "Post's Feed", @user %></li>
-			<li class="active" id="nav-interests"><%= link_to "Interests", user_interests_user_path(@user) %></li>
-			<li id="nav-goals"><%= link_to "Goals", user_goals_user_path(@user) %></li>
-		</ul>
-	</nav>
 	
-	<div class="interests-wrapper">
+
+	<!-- users_interests = @user_interests.map{|interest| interest.name}
+	users_interests.include?()
+ -->	<div class="interests-wrapper">
 		<div class="row interests-form">
 			<%= form_tag(users_interests_path, method: :post) do %>
 				<ul class="interests-list">
 				  <% @interests.each do |interest| %>
 				      <li>
-				        <%= check_box_tag 'interests[]', interest.id, current_user.interests.include  %>
+				        <%= check_box_tag 'interests[]', interest.id, UserInterest.include  %>
 				        <%= interest.name %>
 				      </li>
 				  <% end %>
