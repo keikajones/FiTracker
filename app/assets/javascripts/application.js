@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require slidebars
+//= require main
 //= require_tree .
 
